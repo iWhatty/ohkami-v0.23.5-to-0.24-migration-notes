@@ -41,3 +41,5 @@ This repository contains notes on the main changes between versions **0.23.5** a
 - Workers section describes the new `bindings` macro and durable object helpers.
 
 Refer to the source of each version for full details.  See the `ohkami-0.23.5` and `ohkami-0.24` directories for the exact code.
+
+For a hands-on introduction to Ohkami **v0.24**, check out the [start-up guide](docs/STARTUP_GUIDE_v0.24.md) with examples and TLS setup.
