@@ -72,3 +72,36 @@ use ohkami::header::ETag;
 let etag = ETag::weak("v1".into());
 res.headers.set().ETag(etag.clone());
 ```
+
+## Custom Typed Headers
+
+The [`typed::header`](../ohkami-0.24/ohkami/src/typed/header.rs) module defines wrappers for many standard headers.
+They implement `FromRequest` so a handler can declare the headers it needs and validation happens automatically.
+
+You can provide your own parsing logic by implementing `FromHeader` for a custom type:
+
+```rust,no_run
+use ohkami::prelude::*;
+use ohkami::typed::{header, status};
+
+struct ApiKey(String);
+impl<'r> header::FromHeader<'r> for ApiKey {
+    type Error = status::Unauthorized<&'static str>;
+    fn from_header(raw: &'r str) -> Result<Self, Self::Error> {
+        if raw.starts_with("Key ") {
+            Ok(ApiKey(raw[4..].to_owned()))
+        } else {
+            Err(status::Unauthorized("missing key"))
+        }
+    }
+}
+
+async fn protected(header::Authorization(ApiKey(key)): header::Authorization<ApiKey>)
+    -> &'static str
+{
+    println!("key = {key}");
+    "ok"
+}
+```
+
+`Cookie` is a specialized wrapper that deserializes the header into a struct using `serde`. This makes reading structured cookies trivial.
