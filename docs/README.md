@@ -8,4 +8,5 @@ Use these guides when exploring version **0.24**.
 - [CODE_STYLE_v0.24.md](CODE_STYLE_v0.24.md) — conventions used throughout the code base.
 - [PATTERNS_v0.24.md](PATTERNS_v0.24.md) — useful idioms taken from the implementation.
 - [CONFIGURATION_v0.24.md](CONFIGURATION_v0.24.md) — environment variables and runtime tuning.
+- [DOCS_ROADMAP.md](DOCS_ROADMAP.md) — what parts of the source have been documented so far.
 - [examples/](examples/README.md) — documentation for the example projects.
