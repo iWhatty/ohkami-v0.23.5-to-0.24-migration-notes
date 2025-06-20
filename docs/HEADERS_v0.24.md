@@ -42,3 +42,26 @@ incoming requests.
 
 
 
+
+### Example
+
+Using `AcceptEncoding` to choose a compression scheme:
+
+```rust
+use ohkami::header::{AcceptEncoding, CompressionEncoding};
+
+if let Some(ae) = req.headers.AcceptEncoding() {
+    if ae.preferred() == Some(CompressionEncoding::Gzip) {
+        res.headers.set().ContentEncoding("gzip");
+    }
+}
+```
+
+Generating an `ETag` for caching:
+
+```rust
+use ohkami::header::ETag;
+
+let etag = ETag::weak("v1".into());
+res.headers.set().ETag(etag.clone());
+```

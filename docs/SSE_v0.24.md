@@ -28,3 +28,25 @@ implementation also contributes schema information to the generated document.
 
 
 
+
+Example server using `tokio` runtime:
+
+```rust,no_run
+use ohkami::prelude::*;
+use ohkami::sse::DataStream;
+use tokio::time::{sleep, Duration};
+
+async fn stream() -> DataStream {
+    DataStream::new(|mut s| async move {
+        for i in 1..=3 {
+            sleep(Duration::from_secs(1)).await;
+            s.send(format!("tick {i}"));
+        }
+    })
+}
+
+#[tokio::main]
+async fn main() {
+    Ohkami::new(("/events".GET(stream))).howl("localhost:3030").await;
+}
+```

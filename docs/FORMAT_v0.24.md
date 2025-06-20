@@ -40,3 +40,47 @@ traits in action.
 
 
 
+
+## Examples
+
+Parsing JSON from a request and responding with JSON:
+
+```rust,no_run
+use ohkami::prelude::*;
+use ohkami::typed::status;
+use ohkami::format::JSON;
+
+#[derive(Deserialize)]
+struct Create<'r> { name: &'r str }
+
+#[derive(Serialize)]
+struct User { name: String }
+
+async fn create_user(JSON(req): JSON<Create<'_>>)
+    -> status::Created<JSON<User>>
+{
+    status::Created(JSON(User { name: req.name.into() }))
+}
+```
+
+Handling file uploads with `Multipart`:
+
+```rust,no_run
+use ohkami::format::{Multipart, File};
+use ohkami::typed::status;
+
+#[derive(Deserialize)]
+struct FormData<'r> {
+    pics: Vec<File<'r>>,
+}
+
+async fn upload(Multipart(data): Multipart<FormData<'_>>)
+    -> status::NoContent
+{
+    println!("received {} files", data.pics.len());
+    status::NoContent
+}
+```
+
+These helpers keep parsing logic out of your handlers while remaining
+fully type‑checked.
