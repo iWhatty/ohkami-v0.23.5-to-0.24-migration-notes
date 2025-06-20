@@ -4,8 +4,11 @@ Several small helpers live under [`ohkami/src/util.rs`](../ohkami-0.24/ohkami/sr
 
 ## Logging Macros
 
-- `INFO!`, `WARNING!`, `ERROR!` and `DEBUG!` print messages consistently whether running natively or in Cloudflare Workers.
-- `push_unchecked!` quickly appends bytes onto a `Vec<u8>`.
+- `INFO!`, `WARNING!`, `ERROR!` and `DEBUG!` print messages consistently whether
+  running natively or in Cloudflare Workers. Each macro forwards to `eprintln!`
+  or `worker::console_*` as appropriate.
+- `push_unchecked!` quickly appends bytes onto a `Vec<u8>` without reallocating
+  when the capacity is sufficient.
 
 ## Data Utilities
 
@@ -13,6 +16,8 @@ Several small helpers live under [`ohkami/src/util.rs`](../ohkami-0.24/ohkami/sr
 - `iter_cookies` parses a raw `Cookie` header into `(name, value)` pairs.
 - `unix_timestamp` returns the current Unix time and works in both native and worker environments.
 - `timeout_in` wraps a future with a timeout when using native runtimes.
+- `percent_encode`, `percent_decode` and `percent_decode_utf8` provide basic URL
+  encoding helpers used throughout the framework.
 
 ## ohkami_lib Crate
 
