@@ -14,6 +14,10 @@ Fields include:
 
 The module also defines the [`FromRequest`](../ohkami-0.24/ohkami/src/request/from_request.rs) trait which allows extracting custom types from a request. Handlers can accept any number of `FromRequest` values and the framework handles failures by returning an appropriate `Response`.
 
+Path parameters implement the separate `FromParam` trait.  Primitive types like
+`u32` and `String` are provided out of the box.  Compose them into structs with
+`#[derive(FromRequest)]` to conveniently capture multiple pieces of data.
+
 Example fang logging requests:
 
 ```rust,no_run
@@ -30,3 +34,4 @@ impl FangAction for Log {
 ```
 
 See the comments in `request/mod.rs` for additional details on payload limits and path parameter parsing.
+

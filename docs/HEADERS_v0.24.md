@@ -35,4 +35,10 @@ helpers to process conditional request headers.
 `AcceptEncoding` struct sorts algorithms by quality values (`QValue`) so you can
 negotiate compressed responses.
 
+Typed helpers exist for many common headers.  For example `ResponseHeaders` has
+methods like `ContentType` and `CacheControl` which accept strongly typed
+wrappers.  Implement `FromHeader` for your own types to parse custom headers on
+incoming requests.
+
+
 
