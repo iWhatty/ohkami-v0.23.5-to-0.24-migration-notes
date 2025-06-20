@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main, v*]
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        toolchain: ['stable', 'nightly']
+        task: ['check', 'test:core', 'test:other', 'bench:dryrun']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup mold
+        run:  |
+          sudo apt install mold clang
+          echo '[target.x86_64-unknown-linux-gnu]'                     >> $HOME/.cargo/config.toml
+          echo 'linker    = "clang"'                                   >> $HOME/.cargo/config.toml
+          echo 'rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]' >> $HOME/.cargo/config.toml
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: latest
+
+      - run: npm install -g wrangler
+
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: ${{ matrix.toolchain }}
+          targets:   x86_64-unknown-linux-gnu, wasm32-unknown-unknown
+
+      - name: Cache cargo bin
+        id:   cache_cargo_bin
+        uses: actions/cache@v4
+        with:
+          key:  ${{ runner.os }}-cargo-bin
+          path: ~/.cargo/bin
+      - name: Install cargo commands
+        if:   ${{ steps.cache_cargo_bin.outputs.cache-hit != 'true' }}
+        run:  |
+          cargo install sqlx-cli --no-default-features --features native-tls,postgres
+          cargo install sccache  --locked
+          cargo install wasm-pack worker-build
+
+      - name: Setup sccache
+        run:  |
+          echo '[build]'                                      >> $HOME/.cargo/config.toml
+          echo "rustc-wrapper = \"$HOME/.cargo/bin/sccache\"" >> $HOME/.cargo/config.toml
+      - name: Cache sccahe dir
+        id:   cahce_sccahe_dir
+        uses: actions/cache@v4
+        with:
+          key:  ${{ runner.os }}-sccahe-dir
+          path: ~/.cache/sccache
+
+      - name: Run tasks
+        run:  |
+          sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b /usr/local/bin
+          task ${{ matrix.task }}

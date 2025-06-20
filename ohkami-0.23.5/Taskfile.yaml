@@ -1,0 +1,122 @@
+version: 3
+
+vars:
+  maybe_nightly: { sh: cargo version | grep -q 'nightly' && echo 'nightly' || echo ''  }
+
+tasks:
+  CI:
+    deps:
+      - task: test
+      - task: check
+      - task: bench:dryrun
+
+  test:
+    deps:
+      - task: test:core
+      - task: test:other
+  test:core:
+    deps:
+      - task: test:no_rt
+      - for:  [tokio, async-std, smol, nio, glommio, lambda, worker]
+        task: test:rt
+        vars: { rt: '{{.ITEM}}' }
+  test:other:
+    deps:
+      - task: test:deps
+      - task: test:doc
+      - task: test:examples
+      - task: test:samples
+
+  check:
+    deps:
+      - task: check:no_rt
+      - for:  [tokio, async-std, smol, nio, glommio, lambda]
+        task: check:rt-native_target
+        vars: { rt: '{{.ITEM}}' }
+      - task: check:rt_worker
+
+  bench:dryrun:
+    status:
+      - (! cargo version | grep -q 'nightly')
+    cmds:
+      - cd benches && cargo bench --features DEBUG --no-run
+      - cd benches_rt/vs_actix-web && cargo check
+      - for: [tokio, async-std, smol, nio, glommio]
+        cmd: cd benches_rt/{{.ITEM}} && cargo check
+
+  bench:
+    status:
+      - (! cargo version | grep -q 'nightly')
+    dir: ./benches
+    cmds:
+      - task: bench:dryrun
+      - cargo bench --features DEBUG
+
+#### tests ####
+  test:deps:
+    cmds:
+      - cargo test -p ohkami_lib
+      - cargo test -p ohkami_openapi
+
+  test:doc:
+    dir: ./ohkami
+    cmds:
+      - cargo test --doc --no-default-features --features DEBUG,rt_tokio,sse,ws,{{.maybe_nightly}}
+      # not activating `openapi` feature for testability of README sample codes
+
+  test:examples:
+    dir: ./examples
+    cmds:
+      - cargo test
+
+  test:samples:
+    dir: ./samples
+    cmds:
+      - chmod +x ./test.sh
+      - ./test.sh
+
+  test:no_rt:
+    dir: ./ohkami
+    cmds:
+      - cargo test --lib --features DEBUG,{{.maybe_nightly}}
+      - cargo test --lib --features DEBUG,sse,{{.maybe_nightly}}
+      - cargo test --lib --features DEBUG,ws,{{.maybe_nightly}}
+      - cargo test --lib --features DEBUG,sse,ws,openapi,{{.maybe_nightly}}
+
+  test:rt:
+    dir: ./ohkami
+    cmds:
+      - cargo test --lib --features rt_{{.rt}},DEBUG,{{.maybe_nightly}}
+      - cargo test --lib --features rt_{{.rt}},DEBUG,sse,{{.maybe_nightly}}
+      - cargo test --lib --features rt_{{.rt}},DEBUG,ws,{{.maybe_nightly}}
+      - cargo test --lib --features rt_{{.rt}},DEBUG,sse,ws,openapi,{{.maybe_nightly}}
+
+#### checks ####
+  # Assure buildability without "DEBUG" feature
+
+  check:no_rt:
+    vars:
+      MAYBE_NIGHTLY_FEATURES:
+        sh: cargo version | grep -q 'nightly' && echo '--features nightly' || echo ''
+    dir: ./ohkami
+    cmds:
+      - cargo check --lib {{.MAYBE_NIGHTLY_FEATURES}}
+      - cargo check --lib --features sse,{{.maybe_nightly}}
+      - cargo check --lib --features ws,{{.maybe_nightly}}
+      - cargo check --lib --features sse,ws,openapi,{{.maybe_nightly}}
+
+  check:rt-native_target:
+    dir: ./ohkami
+    cmds:
+      - cargo check --lib --features rt_{{.rt}},{{.maybe_nightly}}
+      - cargo check --lib --features rt_{{.rt}},sse,{{.maybe_nightly}}
+      - cargo check --lib --features rt_{{.rt}},ws,{{.maybe_nightly}}
+      - cargo check --lib --features rt_{{.rt}},sse,ws,openapi,{{.maybe_nightly}}
+
+  check:rt_worker:
+    dir: ./ohkami
+    cmds:
+      - cargo check --target wasm32-unknown-unknown --lib --features rt_worker,{{.maybe_nightly}}
+      - cargo check --target wasm32-unknown-unknown --lib --features rt_worker,sse,{{.maybe_nightly}}
+      - cargo check --target wasm32-unknown-unknown --lib --features rt_worker,ws,{{.maybe_nightly}}
+      - cargo check --target wasm32-unknown-unknown --lib --features rt_worker,sse,ws,openapi,{{.maybe_nightly}}

@@ -1,0 +1,13 @@
+[package]
+name    = "ohkami_benches_vs_actix-web"
+version = "0.0.0"
+edition = "2024"
+authors = ["kanarus <kanarus786@gmail.com>"]
+
+[dependencies]
+actix-web = { version = "4" }
+
+[profile.release]
+lto           = true
+panic         = "abort"
+codegen-units = 1

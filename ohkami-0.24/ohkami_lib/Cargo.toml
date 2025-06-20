@@ -1,0 +1,28 @@
+[package]
+name          = "ohkami_lib"
+description   = "internal library for Ohkami - intuitive and declarative web framework"
+documentation = "https://docs.rs/ohkami_lib"
+version       = { workspace = true }
+edition       = { workspace = true }
+authors       = { workspace = true }
+homepage      = { workspace = true }
+repository    = { workspace = true }
+readme        = { workspace = true }
+keywords      = { workspace = true }
+categories    = { workspace = true }
+license       = { workspace = true }
+
+[package.metadata.docs.rs]
+features      = ["stream"]
+
+[dependencies]
+serde            = { workspace = true }
+byte_reader      = { workspace = true }
+percent-encoding = { version = "2.3" }
+futures-core     = { optional = true, version = "0.3" }
+
+[features]
+stream = ["dep:futures-core"]
+
+### DEBUG ###
+#default = ["stream"]
