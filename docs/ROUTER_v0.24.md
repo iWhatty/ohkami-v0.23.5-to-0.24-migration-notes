@@ -20,3 +20,26 @@ routes or parameter counts.  The public APIs hide these details but the source i
 useful if you need to debug complex route setups.
 
 
+
+Example tree for nested routes:
+
+```rust,no_run
+use ohkami::prelude::*;
+
+async fn get_user(id: u32) -> String { format!("user {id}") }
+async fn create_user() -> &'static str { "created" }
+
+#[tokio::main]
+async fn main() {
+    let api = Ohkami::new((
+        "/users".GET(|| async {"list"}).POST(create_user),
+        "/users/:id".GET(get_user),
+    ));
+
+    Ohkami::new(("/api".By(api))).howl("localhost:5000").await;
+}
+```
+
+This builds a router with `/api/users` and `/api/users/:id` nodes containing
+handlers for `GET` and `POST` methods. The nested structure mirrors the path
+segments and allows middleware to be attached at any level.

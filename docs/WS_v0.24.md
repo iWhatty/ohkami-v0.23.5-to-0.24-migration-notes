@@ -37,3 +37,25 @@ timeouts.
 
 
 
+
+Simple echo server:
+
+```rust,no_run
+use ohkami::prelude::*;
+use ohkami::ws::{WebSocketContext, WebSocket, Message};
+
+async fn echo(ctx: WebSocketContext<'_>) -> WebSocket {
+    ctx.upgrade(|mut conn| async move {
+        while let Some(msg) = conn.recv().await.expect("recv") {
+            if let Message::Text(t) = msg {
+                conn.send(t).await.expect("send");
+            }
+        }
+    })
+}
+
+#[tokio::main]
+async fn main() {
+    Ohkami::new(("/ws".GET(echo))).howl("localhost:4040").await;
+}
+```

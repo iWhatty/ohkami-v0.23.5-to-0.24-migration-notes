@@ -12,6 +12,7 @@ Use these guides when exploring version **0.24**.
 - [RUNTIME_ADAPTERS_v0.24.md](RUNTIME_ADAPTERS_v0.24.md) — deploying to Workers or Lambda.
 - [UTILS_v0.24.md](UTILS_v0.24.md) — helper functions and utility crate.
 - [MACROS_v0.24.md](MACROS_v0.24.md) — derive and attribute macros.
+- [FANGS_v0.24.md](FANGS_v0.24.md) — overview of builtin middleware.
 - [FORMAT_v0.24.md](FORMAT_v0.24.md) — request/response body helpers.
 - [HEADERS_v0.24.md](HEADERS_v0.24.md) — common header utilities.
 - [REQUEST_v0.24.md](REQUEST_v0.24.md) — request structure and extraction.
