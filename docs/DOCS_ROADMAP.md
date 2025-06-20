@@ -17,9 +17,9 @@ It highlights which modules are documented and notes areas that still need work.
 
 ## Partially Documented
 
-- `format` and `header` modules appear in code snippets but lack detailed explanations.
-- `ws` and `sse` features are only touched on in examples.
-- `router` internals are mentioned briefly but not fully described.
+- `format`, `header`, `ws`, `sse` and the router internals now each have short
+  descriptions in dedicated Markdown files.
+- The `ohkami_openapi` crate is still undocumented.
 
 
 Contributions are welcome!  Add notes or examples for any missing areas so both humans and LLMs can understand the framework more completely.
