@@ -88,3 +88,13 @@ Enable the `openapi` feature to have `Ohkami` produce an OpenAPI document
 describing all routes.  Call `Ohkami::generate` or `generate_to` before
 starting the server to write `openapi.json`.
 
+## Runtime Tuning
+
+Several behaviors can be adjusted via environment variables when using a native runtime:
+
+- `OHKAMI_REQUEST_BUFSIZE` – size of the internal request buffer.
+- `OHKAMI_KEEPALIVE_TIMEOUT` – seconds before an idle connection is closed.
+- `OHKAMI_WEBSOCKET_TIMEOUT` – lifetime of WebSocket sessions.
+
+Set these higher for large headers or long‑lived WebSocket connections.
+

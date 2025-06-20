@@ -7,4 +7,5 @@ Use these guides when exploring version **0.24**.
 - [CODING_GUIDE_v0.24.md](CODING_GUIDE_v0.24.md) — walkthrough of common APIs and patterns.
 - [CODE_STYLE_v0.24.md](CODE_STYLE_v0.24.md) — conventions used throughout the code base.
 - [PATTERNS_v0.24.md](PATTERNS_v0.24.md) — useful idioms taken from the implementation.
+- [CONFIGURATION_v0.24.md](CONFIGURATION_v0.24.md) — environment variables and runtime tuning.
 - [examples/](examples/README.md) — documentation for the example projects.
