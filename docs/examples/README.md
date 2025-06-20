@@ -2,7 +2,8 @@
 
 This folder contains short guides for the example projects included with
 Ohkami **v0.24**. Each sub‑section explains what the example demonstrates and
-how to run it. Use these as building blocks when exploring the framework.
+how to run it.  If you are new to the framework start with the
+[coding guide](../CODING_GUIDE_v0.24.md) and then explore these examples.
 
 - [basic_auth.md](basic_auth.md)
 - [chatgpt.md](chatgpt.md)

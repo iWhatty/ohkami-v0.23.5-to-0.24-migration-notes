@@ -64,3 +64,27 @@ The `typed::status` module defines structs such as `Created` and
 `NoContent` for common status codes.  Construct these with or without a
 payload to clearly express handler results.
 
+## Builtin Middleware
+
+Ohkami ships with several useful fangs that cover common needs.  They can
+be found under [`fang::builtin`](../ohkami-0.24/ohkami/src/fang/builtin):
+
+- `Context` for passing data between fangs and handlers.
+- `BasicAuth` and `JWT` for authentication.
+- `CORS` to add cross origin headers.
+- `Timeout` to stop long running requests.
+
+Combine them as needed when constructing your `Ohkami` instance.
+
+## Real‑time Features
+
+With the `sse` feature enabled an endpoint can stream
+Server‑Sent Events using `DataStream`.  The `ws` feature enables building
+WebSocket handlers via `WebSocketContext`.
+
+## OpenAPI Generation
+
+Enable the `openapi` feature to have `Ohkami` produce an OpenAPI document
+describing all routes.  Call `Ohkami::generate` or `generate_to` before
+starting the server to write `openapi.json`.
+
