@@ -121,6 +121,17 @@ $ curl https://localhost:8443 --insecure
 Hello, secure ohkami!
 ```
 
+## Configuration
+
+Several environment variables adjust runtime behavior on native
+backends:
+
+- `OHKAMI_REQUEST_BUFSIZE` – request buffer size (default **2048** bytes).
+- `OHKAMI_KEEPALIVE_TIMEOUT` – keep‑alive timeout in seconds (default **30**).
+- `OHKAMI_WEBSOCKET_TIMEOUT` – WebSocket timeout in seconds (default **3600**).
+
+Increase these values if your service receives large headers or long‑lived WebSocket connections.
+
 ## Why Ohkami?
 
 - **Macro‑less APIs**: Intuitive and type‑safe route definitions.
