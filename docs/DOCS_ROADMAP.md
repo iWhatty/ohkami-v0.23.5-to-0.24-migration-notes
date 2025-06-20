@@ -11,6 +11,7 @@ It highlights which modules are documented and notes areas that still need work.
 - `ohkami/src/tls` – setup instructions in [STARTUP_GUIDE_v0.24](STARTUP_GUIDE_v0.24.md).
 - `ohkami/src/request` and `ohkami/src/response` – detailed in [REQUEST_v0.24](REQUEST_v0.24.md) and [RESPONSE_v0.24](RESPONSE_v0.24.md).
 - `ohkami/src/typed` – explained in [TYPED_v0.24](TYPED_v0.24.md).
+- `ohkami/src/ohkami/dir` – static file serving in [DIR_v0.24](DIR_v0.24.md).
 
 - `ohkami/src/session` – lifecycle explained in [SESSION_v0.24](SESSION_v0.24.md).
 - Cloud runtime adapters (`x_worker`, `x_lambda`) documented in [RUNTIME_ADAPTERS_v0.24](RUNTIME_ADAPTERS_v0.24.md).
@@ -20,7 +21,7 @@ It highlights which modules are documented and notes areas that still need work.
 
 ## Partially Documented
 
-- `format`, `header`, `ws`, `sse` and the router internals now include example code in their docs. Further real-world guides are still welcome.
+- `format`, `header`, `ws`, `sse` and the router internals now include example code in their docs. Further real-world guides are still welcome. `Dir` was recently documented but additional recipes are encouraged.
 
 
 Contributions are welcome!  Add notes or examples for any missing areas so both humans and LLMs can understand the framework more completely.
