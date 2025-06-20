@@ -49,6 +49,17 @@ impl FangAction for SetServer {
 
 Fangs are added in the routing tuple before the path definitions.
 
+### Builtin Fangs
+
+The [`fang::builtin`](../ohkami-0.24/ohkami/src/fang/builtin) module
+provides ready made middleware:
+
+- `Context` – store request scoped values.
+- `BasicAuth` – HTTP Basic authentication.
+- `JWT` – token based auth.
+- `CORS` – Cross‑Origin Resource Sharing headers.
+- `Timeout` – cancel slow requests on native runtimes.
+
 ## Handler Functions
 
 Handlers are asynchronous functions returning a type that implements
