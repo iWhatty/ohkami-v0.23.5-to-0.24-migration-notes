@@ -7,12 +7,18 @@ Use these guides when exploring version **0.24**.
 - [CODING_GUIDE_v0.24.md](CODING_GUIDE_v0.24.md) — walkthrough of common APIs and patterns.
 - [CODE_STYLE_v0.24.md](CODE_STYLE_v0.24.md) — conventions used throughout the code base.
 - [PATTERNS_v0.24.md](PATTERNS_v0.24.md) — useful idioms taken from the implementation.
+- [ARCHITECTURE_v0.24.md](ARCHITECTURE_v0.24.md) — overview of crate modules.
 - [SESSION_v0.24.md](SESSION_v0.24.md) — how connections are managed.
 - [RUNTIME_ADAPTERS_v0.24.md](RUNTIME_ADAPTERS_v0.24.md) — deploying to Workers or Lambda.
 - [UTILS_v0.24.md](UTILS_v0.24.md) — helper functions and utility crate.
 - [MACROS_v0.24.md](MACROS_v0.24.md) — derive and attribute macros.
 - [FORMAT_v0.24.md](FORMAT_v0.24.md) — request/response body helpers.
 - [HEADERS_v0.24.md](HEADERS_v0.24.md) — common header utilities.
+- [REQUEST_v0.24.md](REQUEST_v0.24.md) — request structure and extraction.
+- [RESPONSE_v0.24.md](RESPONSE_v0.24.md) — building responses.
+- [TYPED_v0.24.md](TYPED_v0.24.md) — typed statuses and headers.
+- [TLS_v0.24.md](TLS_v0.24.md) — HTTPS support.
+- [TESTING_v0.24.md](TESTING_v0.24.md) — running handlers without sockets.
 - [WS_v0.24.md](WS_v0.24.md) — upgrading connections to WebSockets.
 - [SSE_v0.24.md](SSE_v0.24.md) — streaming Server‑Sent Events.
 - [ROUTER_v0.24.md](ROUTER_v0.24.md) — how routes are organized internally.
