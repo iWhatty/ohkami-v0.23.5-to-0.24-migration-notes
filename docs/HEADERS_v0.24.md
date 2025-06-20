@@ -14,6 +14,9 @@ res.headers.set().Server(append("ohkami"));
 
 Multiple calls join the values with commas according to the HTTP spec.
 
+The same helper can be used with typed headers such as
+`ResponseHeaders::Server` to avoid string concatenation by hand.
+
 ## Cookie Builder
 
 `SetCookie` exposes a builder style API for generating `Set-Cookie` headers.
@@ -28,12 +31,16 @@ res.headers.set().SetCookie("id", "42", |c| c.Path("/").SameSiteLax());
 
 `ETag` parses strong and weak entity tags.  Use `ETag::parse` or the iterator
 helpers to process conditional request headers.
+It also implements `Display` so headers can be generated with
+`res.headers.set().ETag(etag.clone());`.
 
 ## Content Encoding
 
 `Encoding` and `CompressionEncoding` represent compression algorithms. The
 `AcceptEncoding` struct sorts algorithms by quality values (`QValue`) so you can
 negotiate compressed responses.
+The helper `QValue::parse` converts a quality string like `"0.8"` into a sortable
+floating point representation.
 
 Typed helpers exist for many common headers.  For example `ResponseHeaders` has
 methods like `ContentType` and `CacheControl` which accept strongly typed
