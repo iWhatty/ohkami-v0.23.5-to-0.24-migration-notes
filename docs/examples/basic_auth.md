@@ -6,6 +6,16 @@ It creates a nested `Ohkami` instance secured by the `BasicAuth` fang.  The oute
 server exposes a public `/hello` endpoint and a `/private` endpoint that requires
 the configured credentials.
 
+## Files
+
+- `src/main.rs` – configures a nested `Ohkami` protected by `BasicAuth`.
+
+### `src/main.rs`
+
+`private_ohkami` defines the secured portion with its own route. The outer
+`Ohkami` mounts both the public `/hello` and `/private/hello` which delegates to
+the inner application.
+
 Run it with:
 
 ```bash
