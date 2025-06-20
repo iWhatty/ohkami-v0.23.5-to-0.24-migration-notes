@@ -31,3 +31,4 @@ Use these guides when exploring version **0.24**.
 - [FEATURE_REQUESTS.md](FEATURE_REQUESTS.md) — ideas for future improvements.
 - [examples/](examples/README.md) — documentation for the example projects.
 - [SAMPLES_v0.24.md](SAMPLES_v0.24.md) — overview of the larger sample projects.
+- [NOTES_FROM_SOURCE_v0.24.md](NOTES_FROM_SOURCE_v0.24.md) — summary of design cues directly from the source code.
