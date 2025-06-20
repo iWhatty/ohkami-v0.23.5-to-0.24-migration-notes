@@ -9,6 +9,8 @@ It highlights which modules are documented and notes areas that still need work.
 - `ohkami/src/fang` – builtin middleware referenced in [CODING_GUIDE_v0.24](CODING_GUIDE_v0.24.md) and [PATTERNS_v0.24](PATTERNS_v0.24.md).
 - `ohkami/src/testing` – usage described in both guides above.
 - `ohkami/src/tls` – setup instructions in [STARTUP_GUIDE_v0.24](STARTUP_GUIDE_v0.24.md).
+- `ohkami/src/request` and `ohkami/src/response` – detailed in [REQUEST_v0.24](REQUEST_v0.24.md) and [RESPONSE_v0.24](RESPONSE_v0.24.md).
+- `ohkami/src/typed` – explained in [TYPED_v0.24](TYPED_v0.24.md).
 
 - `ohkami/src/session` – lifecycle explained in [SESSION_v0.24](SESSION_v0.24.md).
 - Cloud runtime adapters (`x_worker`, `x_lambda`) documented in [RUNTIME_ADAPTERS_v0.24](RUNTIME_ADAPTERS_v0.24.md).
@@ -18,7 +20,8 @@ It highlights which modules are documented and notes areas that still need work.
 ## Partially Documented
 
 - `format`, `header`, `ws`, `sse` and the router internals now each have short
-  descriptions in dedicated Markdown files.
+  descriptions in dedicated Markdown files. More real‑world examples would still
+  be valuable.
 - The `ohkami_openapi` crate is still undocumented.
 
 
