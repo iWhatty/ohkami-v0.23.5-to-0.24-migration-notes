@@ -98,3 +98,50 @@ Several behaviors can be adjusted via environment variables when using a native 
 
 Set these higher for large headers or long‑lived WebSocket connections.
 
+## Dependency Injection via Generics
+
+`Context` is generic which enables ergonomic dependency injection. Define a
+repository trait and implement it for your concrete database layer. Handlers can
+be generic over this trait and receive it through `Context<'_, T>`.
+
+```rust
+async fn get_user<R: Repository>(
+    id: u32,
+    Context(r): Context<'_, R>,
+) -> Result<JSON<User>, MyError> {
+    let row = r.get_user_by_id(id as i64).await?;
+    Ok(JSON(User { id: row.id as u32, name: row.name }))
+}
+```
+
+Select the implementation when building the application:
+
+```rust
+Ohkami::new((
+    Context::new(PostgresRepository(pool)),
+    "/users".By(users_ohkami::<PostgresRepository>()),
+));
+```
+
+## Typed Error Handling
+
+Custom error enums can implement `IntoResponse` to convert failures into HTTP
+responses. Handlers then return `Result<T, E>` where `E` maps to an
+appropriate status code.
+
+```rust
+enum MyError {
+    Sqlx(sqlx::Error),
+}
+impl IntoResponse for MyError {
+    fn into_response(self) -> Response {
+        match self {
+            Self::Sqlx(_) => Response::InternalServerError(),
+        }
+    }
+}
+```
+
+[thiserror](https://crates.io/crates/thiserror) can help reduce boilerplate for
+these conversions.
+
