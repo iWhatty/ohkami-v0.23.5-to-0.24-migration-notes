@@ -25,6 +25,7 @@ It highlights which modules are documented and notes areas that still need work.
 - `ohkami_openapi` documented in [OPENAPI_v0.24](OPENAPI_v0.24.md).
 - Dependency injection and typed error patterns now covered in
   [PATTERNS_v0.24](PATTERNS_v0.24.md).
+- Example projects under `samples/` summarized in [SAMPLES_v0.24](SAMPLES_v0.24.md).
 
 ## Partially Documented
 
