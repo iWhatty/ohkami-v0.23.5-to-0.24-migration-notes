@@ -28,8 +28,15 @@ Applications can define their own structures by implementing the two traits.
 `IntoBody` supplies the outgoing `CONTENT_TYPE` and a method to serialize to
 bytes.
 
+For JSON data most handlers accept or return `format::JSON<T>` where `T` is a
+`serde` serializable type.  Multipart uploads expose files using the `File`
+struct which includes filename and content type metadata.  If you need a custom
+encoding such as protocol buffers implement both traits and you can seamlessly
+use the type in request parameters or responses.
+
 See the source files under `format/builtin/` for simple examples of these
 traits in action.
+
 
 
 

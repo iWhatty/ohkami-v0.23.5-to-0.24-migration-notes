@@ -19,4 +19,12 @@ With the `openapi` feature enabled, `#[derive(Schema)]` and the `#[operation]` a
 
 When targeting Cloudflare Workers, the `worker` attribute connects an `async` function as the entry point and `DurableObject` marks a struct for use with Durable Objects. These rely on the `worker` runtime crate.
 
+`#[bindings]` reads your `wrangler.toml` and generates a struct containing Cloudflare
+environment bindings.  This removes boilerplate when accessing KV stores or other
+resources from Workers code.
+
+The internal `consume_struct` macro is used by some derives and generally is not
+needed directly by applications.
+
 These macros reduce boilerplate and keep your application code focused on business logic.
+

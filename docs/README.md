@@ -17,6 +17,7 @@ Use these guides when exploring version **0.24**.
 - [REQUEST_v0.24.md](REQUEST_v0.24.md) — request structure and extraction.
 - [RESPONSE_v0.24.md](RESPONSE_v0.24.md) — building responses.
 - [TYPED_v0.24.md](TYPED_v0.24.md) — typed statuses and headers.
+- [OPENAPI_v0.24.md](OPENAPI_v0.24.md) — generating OpenAPI documentation.
 - [TLS_v0.24.md](TLS_v0.24.md) — HTTPS support.
 - [TESTING_v0.24.md](TESTING_v0.24.md) — running handlers without sockets.
 - [WS_v0.24.md](WS_v0.24.md) — upgrading connections to WebSockets.

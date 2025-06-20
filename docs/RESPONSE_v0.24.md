@@ -23,4 +23,10 @@ async fn handler() -> Response {
 Middleware can modify headers by calling `res.headers.set()` in their `back` method.
 When the `sse` feature is active a handler may return a streaming body and the framework handles chunked encoding automatically.
 
+For convenience the `typed::status` module defines constructors like
+`status::Created` and `status::NoContent` which return lightweight wrappers
+implementing `IntoResponse`.  Prefer these helpers when you simply need to send
+a standard status code.
+
 Review the documentation comments in `response/mod.rs` for details on WebSocket and SSE support.
+
