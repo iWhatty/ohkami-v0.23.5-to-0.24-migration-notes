@@ -46,3 +46,5 @@ For a hands-on introduction to Ohkami **v0.24**, check out the [start-up guide](
 
 For walkthroughs of the sample applications, see the guides in
 [docs/examples](docs/examples/README.md).
+
+For more style guidelines see [docs/CODE_STYLE_v0.24.md](docs/CODE_STYLE_v0.24.md) and the pattern notes in [docs/PATTERNS_v0.24.md](docs/PATTERNS_v0.24.md).
