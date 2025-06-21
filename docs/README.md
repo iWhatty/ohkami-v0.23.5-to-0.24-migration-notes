@@ -1,6 +1,7 @@
 # Ohkami v0.24 Documentation
 
-This directory collects learning material for the [Ohkami](https://github.com/ohkami-rs/ohkami) web framework.
+This directory collects learning material for the
+[Ohkami](https://github.com/ohkami-rs/ohkami) web framework.
 Use these guides when exploring version **0.24**.
 
 - [STARTUP_GUIDE_v0.24.md](STARTUP_GUIDE_v0.24.md) — installation and running your first server.
@@ -28,11 +29,11 @@ Use these guides when exploring version **0.24**.
 - [ROUTER_v0.24.md](ROUTER_v0.24.md) — how routes are organized internally.
 - [FEATURE_FLAGS_v0.24.md](FEATURE_FLAGS_v0.24.md) — optional Cargo features.
 - [TASKS_v0.24.md](TASKS_v0.24.md) — common `task` commands.
-- [BENCHES_v0.24.md](BENCHES_v0.24.md) — running performance benchmarks.
+- [BENCHES_v0.24.md](BENCHES_v0.24.md) — performance benchmarks and tuning tips.
 
 - [CONFIGURATION_v0.24.md](CONFIGURATION_v0.24.md) — environment variables and runtime tuning.
 - [DOCS_ROADMAP.md](DOCS_ROADMAP.md) — what parts of the source have been documented so far.
 - [FEATURE_REQUESTS.md](FEATURE_REQUESTS.md) — ideas for future improvements.
 - [examples/](examples/README.md) — documentation for the example projects.
 - [SAMPLES_v0.24.md](SAMPLES_v0.24.md) — overview of the larger sample projects.
-- [NOTES_FROM_SOURCE_v0.24.md](NOTES_FROM_SOURCE_v0.24.md) — summary of design cues directly from the source code.
+- [NOTES_FROM_SOURCE_v0.24.md](NOTES_FROM_SOURCE_v0.24.md) — design notes from the source.
