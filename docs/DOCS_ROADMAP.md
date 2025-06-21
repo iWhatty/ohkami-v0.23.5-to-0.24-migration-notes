@@ -26,10 +26,17 @@ It highlights which modules are documented and notes areas that still need work.
 - Dependency injection and typed error patterns now covered in
   [PATTERNS_v0.24](PATTERNS_v0.24.md).
 - Example projects under `samples/` summarized in [SAMPLES_v0.24](SAMPLES_v0.24.md).
+- `Taskfile.yaml` commands described in [TASKS_v0.24](TASKS_v0.24.md).
+- Benchmark crates explained in [BENCHES_v0.24](BENCHES_v0.24.md).
+- Cargo feature flags listed in [FEATURE_FLAGS_v0.24](FEATURE_FLAGS_v0.24.md).
 
 ## Partially Documented
 
 - `format`, `header`, `ws`, `sse` and portions of the router internals now include example code in their docs. Further real-world guides are still welcome. `Dir` was recently documented but additional recipes are encouraged.
 
+Additional gaps:
+
+- Detailed benchmarking results and tuning tips are not yet covered.
+- More real‑world taskfile usage examples would help new contributors.
 
 Contributions are welcome!  Add notes or examples for any missing areas so both humans and LLMs can understand the framework more completely.
