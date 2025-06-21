@@ -10,4 +10,6 @@ These options are read at startup and apply to all servers.
 - `OHKAMI_WEBSOCKET_TIMEOUT` – WebSocket session timeout in seconds.
   Defaults to **3600** seconds (1 hour) and only applies with the `ws` feature.
 
-Increase these values if clients send large headers or WebSocket connections should persist longer.
+Values are parsed once using `LazyLock`. Invalid or missing variables fall back
+to the defaults above. Increase these numbers if clients send large headers or
+WebSocket connections should persist longer.

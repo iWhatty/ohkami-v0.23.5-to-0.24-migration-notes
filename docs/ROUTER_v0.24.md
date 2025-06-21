@@ -19,6 +19,13 @@ Understanding this structure helps when reading error messages about conflicting
 routes or parameter counts.  The public APIs hide these details but the source is
 useful if you need to debug complex route setups.
 
+## Path Validation
+
+Route segments are validated when building the router. Segment names may only
+contain ASCII letters, digits and `-._~`. Parameters start with a leading colon
+(`:`) and follow the same character rules. The implementation rejects empty or
+malformed segments early so typos are caught at startup.
+
 
 
 Example tree for nested routes:
