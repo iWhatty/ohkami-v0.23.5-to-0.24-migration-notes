@@ -7,6 +7,7 @@ Use these guides when exploring version **0.24**.
 - [STARTUP_GUIDE_v0.24.md](STARTUP_GUIDE_v0.24.md) — installation and running your first server.
 - [CODING_GUIDE_v0.24.md](CODING_GUIDE_v0.24.md) — walkthrough of common APIs and patterns.
 - [CODE_STYLE_v0.24.md](CODE_STYLE_v0.24.md) — conventions used throughout the code base.
+- [PRELUDE_v0.24.md](PRELUDE_v0.24.md) — common re‑exports used in examples.
 - [PATTERNS_v0.24.md](PATTERNS_v0.24.md) — useful idioms taken from the implementation.
 - [ARCHITECTURE_v0.24.md](ARCHITECTURE_v0.24.md) — overview of crate modules.
 - [SESSION_v0.24.md](SESSION_v0.24.md) — how connections are managed.
