@@ -36,7 +36,8 @@ It highlights which modules are documented and notes areas that still need work.
 
 Additional gaps:
 
-- Detailed benchmarking results and tuning tips are not yet covered.
+- Benchmarking basics are documented but real performance numbers are still
+  missing.
 - More real‑world taskfile usage examples would help new contributors.
 
 Contributions are welcome!  Add notes or examples for any missing areas so both humans and LLMs can understand the framework more completely.
