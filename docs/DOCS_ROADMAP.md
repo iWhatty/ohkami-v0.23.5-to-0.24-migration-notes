@@ -12,6 +12,7 @@ It highlights which modules are documented and notes areas that still need work.
 - `ohkami/src/request` and `ohkami/src/response` – detailed in [REQUEST_v0.24](REQUEST_v0.24.md) and [RESPONSE_v0.24](RESPONSE_v0.24.md).
 - `ohkami/src/typed` – explained in [TYPED_v0.24](TYPED_v0.24.md).
 - `ohkami/src/lib.rs` – crate root documented in the main README.
+- `ohkami/src/lib.rs::prelude` – imports covered in [PRELUDE_v0.24](PRELUDE_v0.24.md).
 - `ohkami/src/ohkami/dir` – static file serving in [DIR_v0.24](DIR_v0.24.md).
 - `ohkami/src/config` – environment variables documented in
   [CONFIGURATION_v0.24](CONFIGURATION_v0.24.md).
