@@ -30,6 +30,7 @@ It highlights which modules are documented and notes areas that still need work.
 - `Taskfile.yaml` commands described in [TASKS_v0.24](TASKS_v0.24.md).
 - Benchmark crates explained in [BENCHES_v0.24](BENCHES_v0.24.md).
 - Cargo feature flags listed in [FEATURE_FLAGS_v0.24](FEATURE_FLAGS_v0.24.md).
+- Workspace setup documented in [../ENV_SETUP.md](../ENV_SETUP.md).
 
 ## Partially Documented
 
