@@ -30,7 +30,7 @@ Use these guides when exploring version **0.24**.
 - [ROUTER_v0.24.md](ROUTER_v0.24.md) — how routes are organized internally.
 - [FEATURE_FLAGS_v0.24.md](FEATURE_FLAGS_v0.24.md) — optional Cargo features.
 - [TASKS_v0.24.md](TASKS_v0.24.md) — common `task` commands.
-- [BENCHES_v0.24.md](BENCHES_v0.24.md) — performance benchmarks and tuning tips.
+- [BENCHES_v0.24.md](BENCHES_v0.24.md) — micro and runtime benchmarks with tuning tips.
 
 - [CONFIGURATION_v0.24.md](CONFIGURATION_v0.24.md) — environment variables and runtime tuning.
 - [DOCS_ROADMAP.md](DOCS_ROADMAP.md) — what parts of the source have been documented so far.

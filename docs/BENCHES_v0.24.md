@@ -14,6 +14,22 @@ The `benches_rt` directory contains experiments comparing runtimes. Each
 subfolder (`tokio`, `smol`, `nio`, `glommio`) is a small binary crate that can be
 executed with `cargo run --release` to gauge throughput on your machine.
 
+### Bench Files
+
+Micro benchmarks under `benches/benches` cover:
+
+- `content.rs` — copy strategies for request bodies.
+- `imf_fixdate.rs` — formatting RFC 1123 dates.
+- `itoa.rs` — integer to ASCII conversions.
+- `request_headers.rs` — parsing incoming headers.
+
+Common helpers live in `benches/src`, such as the `header_map.rs` example map.
+
+Runtime benchmarks live in `benches_rt`:
+
+- `tokio`, `smol`, `nio` and `glommio` — minimal servers for each runtime.
+- `vs_actix-web` — reference implementation using Actix Web.
+
 ## Adjusting Criterion
 
 You can tweak the benchmark parameters by passing options after `--`.
