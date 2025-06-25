@@ -12,3 +12,9 @@ Caused by:
 
 Caused by:
   [56] Failure when receiving data from the peer (CONNECT tunnel failed, response 403)
+
+----
+
+error: failed to select a version for the requirement `hashbrown = "^0.14.5"`
+candidate versions found which didn't match: 0.15.4
+location searched: directory source `/workspace/ohkami-v0.23.5-to-0.24-migration-notes/ohkami-0.24/vendor` (which is replacing registry `crates-io`)
