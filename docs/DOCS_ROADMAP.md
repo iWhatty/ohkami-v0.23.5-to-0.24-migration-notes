@@ -23,7 +23,7 @@ It highlights which modules are documented and notes areas that still need work.
 - `ohkami/src/config` â environment variables documented in
   [CONFIGURATION_v0.24](CONFIGURATION_v0.24.md). Values are loaded once at
   startup through the [`CONFIG`](../ohkami-0.24/ohkami/src/config.rs) static.
-- `ohkami/src/router` â tree structure and lookup process described in
+- `ohkami/src/router` â tree structure, compression and lookup documented in
   [ROUTER_v0.24](ROUTER_v0.24.md).
 
 - `ohkami/src/session` â lifecycle explained in [SESSION_v0.24](SESSION_v0.24.md).
