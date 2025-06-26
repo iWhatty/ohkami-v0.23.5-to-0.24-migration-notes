@@ -26,7 +26,7 @@ Each item should be checked off once the guide has been reviewed against the
 - [ ] Review `PATTERNS_v0.24.md`
 - [ ] Review `PRELUDE_v0.24.md`
 - [ ] Review `README.md`
-- [ ] Review `REQUEST_v0.24.md`
+- [x] Review `REQUEST_v0.24.md`
 - [ ] Review `RESPONSE_v0.24.md`
 - [ ] Review `ROUTER_v0.24.md`
 - [ ] Review `RUNTIME_ADAPTERS_v0.24.md`
