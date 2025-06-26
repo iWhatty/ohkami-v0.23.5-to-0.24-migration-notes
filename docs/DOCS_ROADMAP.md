@@ -18,7 +18,8 @@ It highlights which modules are documented and notes areas that still need work.
 - `ohkami/src/typed` â explained in [TYPED_v0.24](TYPED_v0.24.md).
 - `ohkami/src/lib.rs` â crate root documented in the main README.
 - `ohkami/src/lib.rs::prelude` â imports covered in [PRELUDE_v0.24](PRELUDE_v0.24.md).
-- `ohkami/src/ohkami/dir` â static file serving in [DIR_v0.24](DIR_v0.24.md).
+- `ohkami/src/ohkami/dir` — static file serving in [DIR_v0.24](DIR_v0.24.md),
+ including notes on preloading, compression and cache headers.
 - `ohkami/src/config` â environment variables documented in
   [CONFIGURATION_v0.24](CONFIGURATION_v0.24.md). Values are loaded once at
   startup through the [`CONFIG`](../ohkami-0.24/ohkami/src/config.rs) static.

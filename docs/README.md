@@ -17,10 +17,12 @@ Use these guides when exploring version **0.24**.
 - [FANGS_v0.24.md](FANGS_v0.24.md) — overview of builtin middleware.
 - [FORMAT_v0.24.md](FORMAT_v0.24.md) — request/response body helpers.
 - [HEADERS_v0.24.md](HEADERS_v0.24.md) — common header utilities.
-- [DIR_v0.24.md](DIR_v0.24.md) — serving static files from a directory.
+- [DIR_v0.24.md](DIR_v0.24.md) — static directory fang with preloading,
+  compression and caching details.
 - [REQUEST_v0.24.md](REQUEST_v0.24.md) — request structure, context store and extraction.
 - [RESPONSE_v0.24.md](RESPONSE_v0.24.md) — building responses.
-- [ERROR_HANDLING_v0.24.md](ERROR_HANDLING_v0.24.md) — custom error enums and the `IntoResponse` trait.
+- [ERROR_HANDLING_v0.24.md](ERROR_HANDLING_v0.24.md) — custom error enums and
+  the `IntoResponse` trait.
 - [TYPED_v0.24.md](TYPED_v0.24.md) — typed statuses and headers.
 - [OPENAPI_v0.24.md](OPENAPI_v0.24.md) — generating OpenAPI documentation.
 - [TLS_v0.24.md](TLS_v0.24.md) — HTTPS support.
