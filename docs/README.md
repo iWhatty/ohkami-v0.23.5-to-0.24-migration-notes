@@ -34,6 +34,7 @@ Use these guides when exploring version **0.24**.
 
 - [CONFIGURATION_v0.24.md](CONFIGURATION_v0.24.md) — environment variables and runtime tuning.
 - [DOCS_ROADMAP.md](DOCS_ROADMAP.md) — what parts of the source have been documented so far.
+- [DOCS_TODO_v0.24.md](DOCS_TODO_v0.24.md) — checklist for verifying each guide.
 - [FEATURE_REQUESTS.md](FEATURE_REQUESTS.md) — ideas for future improvements.
 - [examples/](examples/README.md) — documentation for the example projects.
 - [SAMPLES_v0.24.md](SAMPLES_v0.24.md) — overview of the larger sample projects.
