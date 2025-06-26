@@ -15,7 +15,8 @@ It highlights which modules are documented and notes areas that still need work.
 - `ohkami/src/lib.rs::prelude` – imports covered in [PRELUDE_v0.24](PRELUDE_v0.24.md).
 - `ohkami/src/ohkami/dir` – static file serving in [DIR_v0.24](DIR_v0.24.md).
 - `ohkami/src/config` – environment variables documented in
-  [CONFIGURATION_v0.24](CONFIGURATION_v0.24.md).
+  [CONFIGURATION_v0.24](CONFIGURATION_v0.24.md). Values are loaded once at
+  startup through the [`CONFIG`](../ohkami-0.24/ohkami/src/config.rs) static.
 - `ohkami/src/router` – tree structure and lookup process described in
   [ROUTER_v0.24](ROUTER_v0.24.md).
 
