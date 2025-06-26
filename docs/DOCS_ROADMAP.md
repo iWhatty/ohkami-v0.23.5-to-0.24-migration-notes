@@ -7,7 +7,7 @@ It highlights which modules are documented and notes areas that still need work.
 
 - `ohkami/src/ohkami` â explained throughout [CODING_GUIDE_v0.24](CODING_GUIDE_v0.24.md).
 - `ohkami/src/fang` â builtin middleware covered in
-  [FANGS_v0.24](FANGS_v0.24.md),
+  [FANGS_v0.24](FANGS_v0.24.md) (builder method details added),
   [CODING_GUIDE_v0.24](CODING_GUIDE_v0.24.md) and
   [PATTERNS_v0.24](PATTERNS_v0.24.md).
 - `ohkami/src/testing` â usage described in both guides above.
