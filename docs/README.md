@@ -28,7 +28,7 @@ Use these guides when exploring version **0.24**.
 - [TYPED_v0.24.md](TYPED_v0.24.md) — typed statuses and headers.
 - [OPENAPI_v0.24.md](OPENAPI_v0.24.md) — generating OpenAPI documentation.
 - [TLS_v0.24.md](TLS_v0.24.md) — HTTPS support.
-- [TESTING_v0.24.md](TESTING_v0.24.md) — running handlers without sockets.
+- [TESTING_v0.24.md](TESTING_v0.24.md) — debug-only in-memory harness for calling routes.
 - [WS_v0.24.md](WS_v0.24.md) — upgrading connections to WebSockets.
 - [SSE_v0.24.md](SSE_v0.24.md) — streaming Server‑Sent Events.
 - [ROUTER_v0.24.md](ROUTER_v0.24.md) — how routes are organized and finalized.
