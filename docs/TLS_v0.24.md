@@ -1,8 +1,12 @@
 # TLS Support
 
-Feature `tls` enables HTTPS servers using [rustls](https://github.com/rustls). The implementation wraps a TCP stream in [`TlsStream`](../ohkami-0.24/ohkami/src/tls/mod.rs) which implements the `Connection` trait used by `Session`.
+The `tls` feature enables HTTPS servers using [rustls](https://github.com/rustls).
+It requires the `rt_tokio` runtime and wraps each TCP connection in
+[`TlsStream`](../ohkami-0.24/ohkami/src/tls/mod.rs). `TlsStream` implements the
+`Connection` trait consumed by `Session`.
 
-To run a server over TLS call `howls` instead of `howl` and provide a configured `ServerConfig`:
+Run a server over TLS by calling `howls` instead of `howl` and passing a
+`rustls::ServerConfig`:
 
 ```rust,no_run
 use ohkami::prelude::*;
@@ -21,4 +25,8 @@ async fn main() {
 }
 ```
 
-Currently TLS only works with the `rt_tokio` runtime and HTTP/1.1. See the README in `ohkami-0.24` for a complete example including certificate loading.
+`howls` performs the TLS handshake using `tokio_rustls::TlsAcceptor` and serves
+HTTP/1.1 responses. WebSocket upgrades are not supported over TLS yet.
+
+For a complete certificate loading example see the
+[README](../ohkami-0.24/README.md#tls).
