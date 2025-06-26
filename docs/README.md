@@ -29,7 +29,7 @@ Use these guides when exploring version **0.24**.
 - [TESTING_v0.24.md](TESTING_v0.24.md) — running handlers without sockets.
 - [WS_v0.24.md](WS_v0.24.md) — upgrading connections to WebSockets.
 - [SSE_v0.24.md](SSE_v0.24.md) — streaming Server‑Sent Events.
-- [ROUTER_v0.24.md](ROUTER_v0.24.md) — how routes are organized internally.
+- [ROUTER_v0.24.md](ROUTER_v0.24.md) — how routes are organized and finalized.
 - [FEATURE_FLAGS_v0.24.md](FEATURE_FLAGS_v0.24.md) — optional Cargo features.
 - [TASKS_v0.24.md](TASKS_v0.24.md) — common `task` commands.
 - [BENCHES_v0.24.md](BENCHES_v0.24.md) — micro and runtime benchmarks with tuning tips.

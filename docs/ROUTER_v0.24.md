@@ -50,3 +50,29 @@ async fn main() {
 This builds a router with `/api/users` and `/api/users/:id` nodes containing
 handlers for `GET` and `POST` methods. The nested structure mirrors the path
 segments and allows middleware to be attached at any level.
+
+## Node Structure
+
+Each HTTP method owns a root [`Node`](../ohkami-0.24/ohkami/src/router/base.rs) that
+stores four fields:
+`pattern`, `handler`, a list of `fangs` (middleware) and child nodes.  See
+[`Router` and `Node` definitions](../ohkami-0.24/ohkami/src/router/base.rs#L11-L27).
+Nodes are created while registering handlers and nested to mirror each path
+segment. Middleware added at a higher node is stored and later combined with
+handlers beneath it.
+
+## Finalization and Lookup
+
+Calling `finalize()` converts the tree into a compact
+[`final::Router`](../ohkami-0.24/ohkami/src/router/final.rs).  During this step
+static children may be merged to shorten the tree when running on a native
+runtime.  The resulting nodes hold prebuilt fang chains (`proc`) and default
+catchers for unmatched paths.
+See [`Router::finalize`](../ohkami-0.24/ohkami/src/router/base.rs#L207-L229)
+and [`Node::from`](../ohkami-0.24/ohkami/src/router/final.rs#L272-L320).
+
+The lookup algorithm walks these nodes using
+[`Node::search_target`](../ohkami-0.24/ohkami/src/router/final.rs#L154-L219).
+It matches static bytes or captures parameters using `split_next_section` and
+returns the handler if the entire path matches.
+
