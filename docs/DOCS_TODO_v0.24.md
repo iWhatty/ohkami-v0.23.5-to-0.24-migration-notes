@@ -20,7 +20,7 @@ Each item should be checked off once the guide has been reviewed against the
 - [ ] Review `FEATURE_REQUESTS.md`
 - [ ] Review `FORMAT_v0.24.md`
 - [x] Review `HEADERS_v0.24.md`
-- [ ] Review `MACROS_v0.24.md`
+- [x] Review `MACROS_v0.24.md`
 - [ ] Review `NOTES_FROM_SOURCE_v0.24.md`
 - [ ] Review `OPENAPI_v0.24.md`
 - [ ] Review `PATTERNS_v0.24.md`
