@@ -28,7 +28,8 @@ It highlights which modules are documented and notes areas that still need work.
 
 - `ohkami/src/session` â lifecycle explained in [SESSION_v0.24](SESSION_v0.24.md).
 - Cloud runtime adapters (`x_worker`, `x_lambda`) documented in
-  [RUNTIME_ADAPTERS_v0.24](RUNTIME_ADAPTERS_v0.24.md).
+  [RUNTIME_ADAPTERS_v0.24](RUNTIME_ADAPTERS_v0.24.md) now include
+  examples for `#[bindings]` and Lambda WebSocket handling.
 - `util` helpers and the `ohkami_lib` crate covered in [UTILS_v0.24](UTILS_v0.24.md).
 - Error conversions via `IntoResponse` documented in
   [ERROR_HANDLING_v0.24](ERROR_HANDLING_v0.24.md).
