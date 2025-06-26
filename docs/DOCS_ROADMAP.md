@@ -10,7 +10,7 @@ It highlights which modules are documented and notes areas that still need work.
   [FANGS_v0.24](FANGS_v0.24.md) (builder method details added),
   [CODING_GUIDE_v0.24](CODING_GUIDE_v0.24.md) and
   [PATTERNS_v0.24](PATTERNS_v0.24.md).
-- `ohkami/src/testing` â usage described in both guides above.
+- `ohkami/src/testing` — explained in [TESTING_v0.24](TESTING_v0.24.md).
 - `ohkami/src/tls` â setup instructions in [STARTUP_GUIDE_v0.24](STARTUP_GUIDE_v0.24.md).
 - `ohkami/src/request` and `ohkami/src/response` – detailed in
   [REQUEST_v0.24](REQUEST_v0.24.md) (context store and payload limits) and
