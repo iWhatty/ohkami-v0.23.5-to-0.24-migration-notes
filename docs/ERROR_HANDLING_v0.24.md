@@ -53,6 +53,40 @@ enum MyError {
 }
 ```
 
+### Simple String Errors
+
+For short messages the [`ErrorMessage`](../ohkami-0.24/ohkami/src/util.rs)
+type implements `IntoResponse` out of the box. Returning `ErrorMessage("oops".into())`
+produces a **500 Internal Server Error** with the text body:
+
+```rust,no_run
+use ohkami::util::ErrorMessage;
+
+async fn handler() -> Result<(), ErrorMessage> {
+    Err(ErrorMessage("something failed".into()))
+}
+```
+
+### Extraction Failures
+
+Custom extractors implementing `FromRequest` or `FromParam` can specify an
+`Error` associated type that also implements `IntoResponse`. When extraction
+fails the framework calls `into_response` on that error and aborts the handler:
+
+```rust,no_run
+use ohkami::{FromRequest, Request, Response};
+
+struct ApiKey(String);
+impl<'r> FromRequest<'r> for ApiKey {
+    type Error = Response;
+    fn from_request(req: &'r Request) -> Option<Result<Self, Self::Error>> {
+        req.headers.get("x-api-key")
+            .map(|k| Ok(ApiKey(k.to_owned())))
+            .or(Some(Err(Response::Unauthorized())))
+    }
+}
+```
+
 ## Logging Failures
 
 Fangs or handlers may log errors using the macros from

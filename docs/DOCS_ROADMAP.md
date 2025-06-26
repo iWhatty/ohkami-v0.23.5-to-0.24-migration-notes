@@ -29,6 +29,8 @@ It highlights which modules are documented and notes areas that still need work.
 - Cloud runtime adapters (`x_worker`, `x_lambda`) documented in
   [RUNTIME_ADAPTERS_v0.24](RUNTIME_ADAPTERS_v0.24.md).
 - `util` helpers and the `ohkami_lib` crate covered in [UTILS_v0.24](UTILS_v0.24.md).
+- Error conversions via `IntoResponse` documented in
+  [ERROR_HANDLING_v0.24](ERROR_HANDLING_v0.24.md).
 - Procedural macros in [MACROS_v0.24](MACROS_v0.24.md).
 - `ohkami_openapi` documented in [OPENAPI_v0.24](OPENAPI_v0.24.md).
 - Dependency injection and typed error patterns now covered in
