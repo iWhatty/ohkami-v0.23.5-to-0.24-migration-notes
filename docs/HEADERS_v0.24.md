@@ -27,8 +27,14 @@ can be chained.
 res.headers.set().SetCookie("id", "42", |c| c.Path("/").SameSiteLax());
 ```
 
-## Entity Tags
+To read `Set-Cookie` headers from a `Response` use the iterator:
+```rust
+for c in res.headers.SetCookie() {
+    println!("{} = {}", c.Cookie().0, c.Cookie().1);
+}
+```
 
+## Entity Tags
 `ETag` parses strong and weak entity tags.  Use `ETag::parse` or the iterator
 helpers to process conditional request headers.
 It also implements `Display` so headers can be generated with
@@ -55,12 +61,22 @@ incoming requests.
 Using `AcceptEncoding` to choose a compression scheme:
 
 ```rust
-use ohkami::header::{AcceptEncoding, CompressionEncoding};
+use ohkami::header::{AcceptEncoding, Encoding};
 
-if let Some(ae) = req.headers.AcceptEncoding() {
-    if ae.preferred() == Some(CompressionEncoding::Gzip) {
+if let Some(raw) = req.headers.AcceptEncoding() {
+    let ae = AcceptEncoding::parse(raw);
+    if matches!(ae.iter_in_preferred_order().next(), Some(Encoding::Gzip)) {
         res.headers.set().ContentEncoding("gzip");
     }
+}
+```
+
+`AcceptEncoding::accepts` and `accepts_compression` let you test if
+the client accepts a particular encoding.
+For precompressed files you might do:
+```rust
+if !ae.accepts_compression(&CompressionEncoding::Single(Encoding::Brotli)) {
+    return Response::NotAcceptable();
 }
 ```
 
@@ -75,9 +91,10 @@ res.headers.set().ETag(etag.clone());
 
 ## Custom Typed Headers
 
-The [`typed::header`](../ohkami-0.24/ohkami/src/typed/header.rs) module defines wrappers for many standard headers.
-They implement `FromRequest` so a handler can declare the headers it needs and validation happens automatically.
-
+The [`typed::header`](../ohkami-0.24/ohkami/src/typed/header.rs) module
+defines wrappers for many standard headers.
+They implement `FromRequest` so handlers can declare the headers they
+need and validation happens automatically.
 You can provide your own parsing logic by implementing `FromHeader` for a custom type:
 
 ```rust,no_run
@@ -104,4 +121,5 @@ async fn protected(header::Authorization(ApiKey(key)): header::Authorization<Api
 }
 ```
 
-`Cookie` is a specialized wrapper that deserializes the header into a struct using `serde`. This makes reading structured cookies trivial.
+`Cookie` is a specialized wrapper that deserializes the header into a
+struct using `serde`. This makes reading structured cookies trivial.
