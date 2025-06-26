@@ -35,8 +35,7 @@ It highlights which modules are documented and notes areas that still need work.
 - Workspace setup documented in [../ENV_SETUP.md](../ENV_SETUP.md).
 
 ## Partially Documented
-
-- `format`, `header`, `ws`, `sse` and portions of the router internals now include example code in their docs. Further real-world guides are still welcome. `Dir` was recently documented but additional recipes are encouraged.
+- `format`, `header`, `ws`, `sse` and portions of the router internals now include example code in their docs. The header guide covers `AcceptEncoding` parsing and `Set-Cookie` iteration. Further real-world guides are still welcome. `Dir` was recently documented but additional recipes are encouraged.
 
 Additional gaps:
 
