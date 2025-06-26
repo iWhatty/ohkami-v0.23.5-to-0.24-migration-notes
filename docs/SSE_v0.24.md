@@ -16,6 +16,19 @@ async fn handler() -> DataStream {
 `DataStream` wraps any `Stream<Item = T>` where `T: Data`.  Calling
 `DataStream::new` spawns an async producer with a queue.  The response is sent
 with `content-type: text/event-stream`.
+Instead of spawning a new queue you may wrap any existing
+`Stream<Item = T>` with `DataStream::from`:
+
+```rust
+use tokio_stream::{wrappers::IntervalStream, StreamExt};
+use tokio::time::{interval, Duration};
+
+async fn ticks() -> DataStream {
+    let s = IntervalStream::new(interval(Duration::from_secs(1)))
+        .map(|_| "tick");
+    DataStream::from(s)
+}
+```
 
 On the consumer side browsers can read these events using the JavaScript
 `EventSource` API.  Remember that Ohkami currently streams using HTTP/1.1
@@ -24,7 +37,20 @@ support.
 
 Implement the `Data` trait for custom event types to control how items are
 encoded before being sent.  When the `openapi` feature is active the
-implementation also contributes schema information to the generated document.
+implementation also contributes schema information to the generated document:
+
+```rust
+use ohkami::sse::Data;
+
+#[derive(openapi::Schema)]
+struct Event { msg: String }
+
+impl Data for Event {
+    fn encode(self) -> String {
+        serde_json::to_string(&self).unwrap()
+    }
+}
+```
 
 
 
