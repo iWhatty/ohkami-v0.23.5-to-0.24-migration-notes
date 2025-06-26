@@ -12,9 +12,9 @@ It highlights which modules are documented and notes areas that still need work.
   [PATTERNS_v0.24](PATTERNS_v0.24.md).
 - `ohkami/src/testing` â usage described in both guides above.
 - `ohkami/src/tls` â setup instructions in [STARTUP_GUIDE_v0.24](STARTUP_GUIDE_v0.24.md).
-- `ohkami/src/request` and `ohkami/src/response` â detailed in
+- `ohkami/src/request` and `ohkami/src/response` – detailed in
   [REQUEST_v0.24](REQUEST_v0.24.md) (context store and payload limits) and
-  [RESPONSE_v0.24](RESPONSE_v0.24.md).
+  [RESPONSE_v0.24](RESPONSE_v0.24.md) (body helpers and typed statuses).
 - `ohkami/src/typed` â explained in [TYPED_v0.24](TYPED_v0.24.md).
 - `ohkami/src/lib.rs` â crate root documented in the main README.
 - `ohkami/src/lib.rs::prelude` â imports covered in [PRELUDE_v0.24](PRELUDE_v0.24.md).
