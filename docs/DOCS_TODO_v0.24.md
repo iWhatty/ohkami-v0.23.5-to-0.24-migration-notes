@@ -15,7 +15,7 @@ Each item should be checked off once the guide has been reviewed against the
 - [ ] Review `DOCS_ROADMAP.md`
 - [ ] Review `DOCS_TODO_v0.24.md`
 - [x] Review `ERROR_HANDLING_v0.24.md`
-- [ ] Review `FANGS_v0.24.md`
+ - [x] Review `FANGS_v0.24.md`
 - [ ] Review `FEATURE_FLAGS_v0.24.md`
 - [ ] Review `FEATURE_REQUESTS.md`
 - [ ] Review `FORMAT_v0.24.md`

@@ -25,7 +25,8 @@ fn app(pool: sqlx::PgPool) -> ohkami::Ohkami {
 ## BasicAuth
 
 `BasicAuth { username, password }` guards routes using the HTTP
-`Authorization` header.  Multiple credentials can be provided via an array.
+`Authorization` header.  Supplying `[BasicAuth; N]` lets you accept several
+username/password pairs.
 
 ```rust,no_run
 use ohkami::fang::BasicAuth;
@@ -39,8 +40,9 @@ let secure = ohkami::Ohkami::new((
 ## JWT
 
 `JWT::<Payload>::new_256(secret)` verifies a JSON Web Token and stores the
-parsed payload in the request context.  Customize the retrieval of the token
-with `with_getter`.
+parsed payload in the request context.  Other helpers `new_384` and `new_512`
+select different HMAC algorithms.  Customize the token lookup using
+`get_token_by`.
 
 ```rust,no_run
 use ohkami::fang::JWT;
@@ -52,13 +54,17 @@ let api = ohkami::Ohkami::new((
     JWT::<Claims>::new_256("topsecret"),
     "/profile".GET(profile),
 ));
+// issue a token for a user
+let token = JWT::<Claims>::new_256("topsecret")
+    .issue(Claims { sub: "u1".into() });
 ```
 
 ## CORS
 
 `CORS::new(origin)` configures `Access-Control-*` headers for cross origin
 requests.  Methods like `.AllowCredentials()` and `.AllowHeaders([...])`
-customize the response to pre‑flight and normal requests.
+customize the response to pre‑flight and normal requests.  Use
+`ExposeHeaders`, `MaxAge` and `AllowMethods` to fine tune the headers.
 
 ```rust,no_run
 use ohkami::fang::CORS;
@@ -67,12 +73,16 @@ let o = ohkami::Ohkami::new((
     CORS::new("https://example.com").AllowCredentials(),
     "/api".GET(handler),
 ));
+// allow caching and expose custom headers
+let cors = CORS::new("https://example.com")
+    .ExposeHeaders(["X-My-Header"]).MaxAge(600);
 ```
 
 ## Timeout
 
 `Timeout::by_secs(n)` aborts handlers that take longer than the specified
-duration on native runtimes.
+duration on native runtimes.  Builders `by_millis`, `by_secs_f32` and
+`by_secs_f64` are also available.
 
 ```rust,no_run
 use ohkami::fang::Timeout;
@@ -85,8 +95,11 @@ Ohkami::new((Timeout::by_secs(10),
 ## Enamel
 
 `Enamel` adds a collection of security headers such as
-`Cross-Origin-Embedder-Policy` and `X-Frame-Options`. Use
-`Enamel::default()` and override fields as needed.
+`Cross-Origin-Embedder-Policy` and `X-Frame-Options`. Start with
+`Enamel::default()` and override fields using builder methods like
+`CrossOriginResourcePolicy` or `ContentSecurityPolicy`.
+Provide a full `ContentSecurityPolicy` using the `CSP` helper and its
+`sandbox` and `src` modules for typed configuration.
 
-These fangs can be combined when building an `Ohkami` instance.  Refer to the
+These fangs can be combined when building an `Ohkami` instance. Refer to the
 source files under `fang/builtin` for additional options and examples.
