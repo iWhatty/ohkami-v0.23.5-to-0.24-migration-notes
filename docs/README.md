@@ -12,7 +12,8 @@ Use these guides when exploring version **0.24**.
 - [ARCHITECTURE_v0.24.md](ARCHITECTURE_v0.24.md) — overview of crate modules.
 - [SESSION_v0.24.md](SESSION_v0.24.md) — how connections are managed.
 - [RUNTIME_ADAPTERS_v0.24.md](RUNTIME_ADAPTERS_v0.24.md) — deploying to Workers or Lambda.
-- [UTILS_v0.24.md](UTILS_v0.24.md) — helper functions and utility crate.
+- [UTILS_v0.24.md](UTILS_v0.24.md) — helper functions and utility crate (stream,
+  slice, num and time modules).
 - [MACROS_v0.24.md](MACROS_v0.24.md) — derives plus OpenAPI and Workers macros.
 - [FANGS_v0.24.md](FANGS_v0.24.md) — overview of builtin middleware and
   configuration options.

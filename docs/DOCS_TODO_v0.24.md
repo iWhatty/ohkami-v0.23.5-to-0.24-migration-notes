@@ -38,7 +38,7 @@ Each item should be checked off once the guide has been reviewed against the
 - [ ] Review `TESTING_v0.24.md`
 - [ ] Review `TLS_v0.24.md`
 - [ ] Review `TYPED_v0.24.md`
-- [ ] Review `UTILS_v0.24.md`
+- [x] Review `UTILS_v0.24.md`
 - [ ] Review `WS_v0.24.md`
 
 ## Examples
