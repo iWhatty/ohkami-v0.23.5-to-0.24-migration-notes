@@ -27,7 +27,8 @@ Use these guides when exploring version **0.24**.
 - [ERROR_HANDLING_v0.24.md](ERROR_HANDLING_v0.24.md) — custom error enums and
   the `IntoResponse` trait.
 - [TYPED_v0.24.md](TYPED_v0.24.md) — typed statuses and headers.
-- [OPENAPI_v0.24.md](OPENAPI_v0.24.md) — generating OpenAPI documentation.
+- [OPENAPI_v0.24.md](OPENAPI_v0.24.md) — macros and `Ohkami::generate` for
+  automatic OpenAPI documentation.
 - [TLS_v0.24.md](TLS_v0.24.md) — HTTPS support via `rustls` using `howls`.
 - [TESTING_v0.24.md](TESTING_v0.24.md) — debug-only in-memory harness for calling routes.
 - [WS_v0.24.md](WS_v0.24.md) — upgrading connections to WebSockets and Workers.
