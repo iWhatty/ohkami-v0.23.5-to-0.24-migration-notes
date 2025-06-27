@@ -35,7 +35,7 @@ Use these guides when exploring version **0.24**.
 - [ROUTER_v0.24.md](ROUTER_v0.24.md) — how routes are organized and finalized.
 - [FEATURE_FLAGS_v0.24.md](FEATURE_FLAGS_v0.24.md) — optional Cargo features
   detailing runtime and protocol flags.
-- [TASKS_v0.24.md](TASKS_v0.24.md) — common `task` commands.
+- [TASKS_v0.24.md](TASKS_v0.24.md) — `task` CLI usage including bench helpers.
 - [BENCHES_v0.24.md](BENCHES_v0.24.md) — micro and runtime benchmarks with tuning tips.
 
 - [CONFIGURATION_v0.24.md](CONFIGURATION_v0.24.md) — environment variables and runtime tuning.

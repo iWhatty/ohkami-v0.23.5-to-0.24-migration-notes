@@ -19,3 +19,13 @@ task ci
 ```
 
 These tasks are optional but mirror the commands used in CI pipelines.
+
+Additional helpers:
+
+- `task bench:dryrun` – build all benchmarks without executing them.
+- `task bench` – run micro benchmarks in the `benches` crate.
+- `task test:rt --rt tokio` – run tests for a single runtime (tokio, smol, etc.).
+- `task check:rt-native_target --rt tokio` – build for a specific runtime without running.
+
+The main `task test` and `task check` commands call these subtasks to cover all
+supported runtimes and feature combinations.
