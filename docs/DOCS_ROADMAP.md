@@ -12,7 +12,7 @@ It highlights which modules are documented and notes areas that still need work.
   [PATTERNS_v0.24](PATTERNS_v0.24.md).
 - `ohkami/src/testing` — explained in [TESTING_v0.24](TESTING_v0.24.md).
 - `ohkami/src/tls` — usage documented in [TLS_v0.24](TLS_v0.24.md).
-- `ohkami/src/request` and `ohkami/src/response` – detailed in
+- `ohkami/src/request` and `ohkami/src/response` - detailed in
   [REQUEST_v0.24](REQUEST_v0.24.md) (context store and payload limits) and
   [RESPONSE_v0.24](RESPONSE_v0.24.md) (body helpers and typed statuses).
 - `ohkami/src/typed` â explained in [TYPED_v0.24](TYPED_v0.24.md).
@@ -27,7 +27,8 @@ It highlights which modules are documented and notes areas that still need work.
 - `ohkami/src/router` â tree structure, compression and lookup documented in
   [ROUTER_v0.24](ROUTER_v0.24.md).
 
-- `ohkami/src/session` â lifecycle explained in [SESSION_v0.24](SESSION_v0.24.md) (now includes connection trait details).
+- `ohkami/src/session` - lifecycle explained in [SESSION_v0.24](SESSION_v0.24.md)
+including connection trait details.
 - Cloud runtime adapters (`x_worker`, `x_lambda`) documented in
   [RUNTIME_ADAPTERS_v0.24](RUNTIME_ADAPTERS_v0.24.md) now include
   examples for `#[bindings]` and Lambda WebSocket handling.
@@ -43,6 +44,7 @@ It highlights which modules are documented and notes areas that still need work.
 - Example projects under `samples/` summarized in [SAMPLES_v0.24](SAMPLES_v0.24.md).
 - Quick start server documented in [examples/quick_start.md](examples/quick_start.md).
 - JSON serialization illustrated in [examples/json_response.md](examples/json_response.md).
+- Server‑sent events showcased in [examples/sse.md](examples/sse.md).
 - `Taskfile.yaml` tasks explained in [TASKS_v0.24](TASKS_v0.24.md) including check, test and bench.
 - Benchmark crates explained in [BENCHES_v0.24](BENCHES_v0.24.md), including lists
   of micro benchmark modules and runtime comparison crates.

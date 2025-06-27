@@ -53,6 +53,6 @@ Each item should be checked off once the guide has been reviewed against the
 - [ ] Review `examples/jwt.md`
 - [ ] Review `examples/multiple-single-threads.md`
 - [x] Review `examples/quick_start.md`
-- [ ] Review `examples/sse.md`
+- [x] Review `examples/sse.md`
 - [ ] Review `examples/static_files.md`
 - [ ] Review `examples/websocket.md`
