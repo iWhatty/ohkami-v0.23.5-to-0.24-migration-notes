@@ -36,7 +36,8 @@ It highlights which modules are documented and notes areas that still need work.
   [ERROR_HANDLING_v0.24](ERROR_HANDLING_v0.24.md).
 - Procedural macros in [MACROS_v0.24](MACROS_v0.24.md) now include examples for
   `#[operation]`, `#[worker]` and `#[bindings]`.
-- `ohkami_openapi` documented in [OPENAPI_v0.24](OPENAPI_v0.24.md).
+- `ohkami_openapi` documented in [OPENAPI_v0.24](OPENAPI_v0.24.md) with examples
+  for `openapi::Tag` and custom `#[openapi::operation]` overrides.
 - Dependency injection and typed error patterns now covered in
   [PATTERNS_v0.24](PATTERNS_v0.24.md).
 - Example projects under `samples/` summarized in [SAMPLES_v0.24](SAMPLES_v0.24.md).

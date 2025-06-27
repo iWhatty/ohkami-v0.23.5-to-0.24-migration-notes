@@ -54,10 +54,25 @@ async fn main() {
 }
 ```
 
-`generate_to` writes the document to an arbitrary path.  On Cloudflare Workers
+`generate_to` writes the document to an arbitrary path. On Cloudflare Workers
 use the `scripts/workers_openapi.js` helper to run this logic outside of the
 `wasm32` environment.
 
+### Metadata structures
+
+`openapi::OpenAPI` holds the API title, version and a list of `Server` values.
+Servers may have descriptions or variables via `.description` and `.var`.
+
+Handlers can be grouped with the `openapi::Tag` fang which appends a tag to all
+operations of a sub `Ohkami`.
+
+### Customising operations
+
+The `#[openapi::operation]` attribute accepts an optional operation ID followed
+by overrides inside braces.  Supported keys include `summary`, `requestBody`, a
+status code or parameter name.  Descriptions from doc comments are applied
+automatically.
+
 The resulting JSON follows the OpenAPI 3.1 specification and includes schemas,
-parameters, request bodies and responses extracted from your handlers.  Manual
+parameters, request bodies and responses extracted from your handlers. Manual
 edits are rarely necessary once the macros are in place.
