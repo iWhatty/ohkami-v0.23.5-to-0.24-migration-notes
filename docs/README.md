@@ -19,7 +19,7 @@ Use these guides when exploring version **0.24**.
 - [MACROS_v0.24.md](MACROS_v0.24.md) — derives plus OpenAPI and Workers macros.
 - [FANGS_v0.24.md](FANGS_v0.24.md) — overview of builtin middleware and
   configuration options.
-- [FORMAT_v0.24.md](FORMAT_v0.24.md) — request/response body helpers.
+- [FORMAT_v0.24.md](FORMAT_v0.24.md) — request/response body helpers and custom format examples.
 - [HEADERS_v0.24.md](HEADERS_v0.24.md) — common header utilities.
 - [DIR_v0.24.md](DIR_v0.24.md) — static directory fang with preloading,
   compression and caching details.

@@ -53,7 +53,8 @@ including connection trait details.
 - Workspace setup documented in [../ENV_SETUP.md](../ENV_SETUP.md).
 
 ## Partially Documented
-- `format`, `header`, and `ws` plus portions of the router internals now
+- `format` (including the `bound` traits and a CSV example),
+  `header`, and `ws` plus portions of the router internals now
 include example code in their docs. The WebSocket guide covers
 `upgrade_durable` and the `SessionMap` helper for Workers. `sse` recently
 gained a section on `DataStream::from` and custom `Data` implementations.
