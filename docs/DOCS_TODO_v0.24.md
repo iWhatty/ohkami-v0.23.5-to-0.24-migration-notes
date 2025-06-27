@@ -54,5 +54,5 @@ Each item should be checked off once the guide has been reviewed against the
 - [ ] Review `examples/multiple-single-threads.md`
 - [x] Review `examples/quick_start.md`
 - [x] Review `examples/sse.md`
-- [ ] Review `examples/static_files.md`
+- [x] Review `examples/static_files.md`
 - [ ] Review `examples/websocket.md`
