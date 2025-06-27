@@ -44,6 +44,7 @@ Use these guides when exploring version **0.24**.
 - [DOCS_TODO_v0.24.md](DOCS_TODO_v0.24.md) — checklist for verifying each guide.
 - [FEATURE_REQUESTS.md](FEATURE_REQUESTS.md) — ideas for future improvements.
 - [examples/](examples/README.md) — documentation for the example projects.
+  - [quick_start.md](examples/quick_start.md) — minimal starter server.
 - [SAMPLES_v0.24.md](SAMPLES_v0.24.md) — overview of the larger sample projects.
 - [NOTES_FROM_SOURCE_v0.24.md](NOTES_FROM_SOURCE_v0.24.md) — design notes from the source.
 - [../ENV_SETUP.md](../ENV_SETUP.md) — initializing the workspace environment.
