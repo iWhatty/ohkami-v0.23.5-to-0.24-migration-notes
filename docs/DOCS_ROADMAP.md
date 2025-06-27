@@ -41,6 +41,7 @@ It highlights which modules are documented and notes areas that still need work.
 - Dependency injection and typed error patterns now covered in
   [PATTERNS_v0.24](PATTERNS_v0.24.md).
 - Example projects under `samples/` summarized in [SAMPLES_v0.24](SAMPLES_v0.24.md).
+- Quick start server documented in [examples/quick_start.md](examples/quick_start.md).
 - `Taskfile.yaml` tasks explained in [TASKS_v0.24](TASKS_v0.24.md) including check, test and bench.
 - Benchmark crates explained in [BENCHES_v0.24](BENCHES_v0.24.md), including lists
   of micro benchmark modules and runtime comparison crates.
