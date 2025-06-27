@@ -27,7 +27,7 @@ It highlights which modules are documented and notes areas that still need work.
 - `ohkami/src/router` â tree structure, compression and lookup documented in
   [ROUTER_v0.24](ROUTER_v0.24.md).
 
-- `ohkami/src/session` â lifecycle explained in [SESSION_v0.24](SESSION_v0.24.md).
+- `ohkami/src/session` â lifecycle explained in [SESSION_v0.24](SESSION_v0.24.md) (now includes connection trait details).
 - Cloud runtime adapters (`x_worker`, `x_lambda`) documented in
   [RUNTIME_ADAPTERS_v0.24](RUNTIME_ADAPTERS_v0.24.md) now include
   examples for `#[bindings]` and Lambda WebSocket handling.
