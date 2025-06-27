@@ -49,7 +49,7 @@ Each item should be checked off once the guide has been reviewed against the
 - [ ] Review `examples/form.md`
 - [ ] Review `examples/hello.md`
 - [ ] Review `examples/html_layout.md`
-- [ ] Review `examples/json_response.md`
+- [x] Review `examples/json_response.md`
 - [ ] Review `examples/jwt.md`
 - [ ] Review `examples/multiple-single-threads.md`
 - [x] Review `examples/quick_start.md`
