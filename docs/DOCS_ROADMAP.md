@@ -41,7 +41,7 @@ including connection trait details.
   for `openapi::Tag` and custom `#[openapi::operation]` overrides.
 - Dependency injection and typed error patterns now covered in
   [PATTERNS_v0.24](PATTERNS_v0.24.md).
-- Example projects under `samples/` summarized in [SAMPLES_v0.24](SAMPLES_v0.24.md).
+- Example projects in `samples/` summarized in [SAMPLES_v0.24](SAMPLES_v0.24.md).
 - Quick start server documented in [examples/quick_start.md](examples/quick_start.md).
 - JSON serialization illustrated in [examples/json_response.md](examples/json_response.md).
 - Server‑sent events showcased in [examples/sse.md](examples/sse.md).

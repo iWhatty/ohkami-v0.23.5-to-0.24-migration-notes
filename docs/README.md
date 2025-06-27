@@ -48,6 +48,6 @@ Use these guides when exploring version **0.24**.
   - [quick_start.md](examples/quick_start.md) — minimal starter server.
   - [json_response.md](examples/json_response.md) — typed `JSON` wrapper usage.
   - [sse.md](examples/sse.md) — streaming events with `DataStream`.
-- [SAMPLES_v0.24.md](SAMPLES_v0.24.md) — overview of the larger sample projects.
+- [SAMPLES_v0.24.md](SAMPLES_v0.24.md) — overview of the sample projects with Workers templates.
 - [NOTES_FROM_SOURCE_v0.24.md](NOTES_FROM_SOURCE_v0.24.md) — design notes from the source.
 - [../ENV_SETUP.md](../ENV_SETUP.md) — initializing the workspace environment.
