@@ -33,7 +33,8 @@ Use these guides when exploring version **0.24**.
 - [WS_v0.24.md](WS_v0.24.md) — upgrading connections to WebSockets and Workers.
 - [SSE_v0.24.md](SSE_v0.24.md) — streaming Server‑Sent Events.
 - [ROUTER_v0.24.md](ROUTER_v0.24.md) — how routes are organized and finalized.
-- [FEATURE_FLAGS_v0.24.md](FEATURE_FLAGS_v0.24.md) — optional Cargo features.
+- [FEATURE_FLAGS_v0.24.md](FEATURE_FLAGS_v0.24.md) — optional Cargo features
+  detailing runtime and protocol flags.
 - [TASKS_v0.24.md](TASKS_v0.24.md) — common `task` commands.
 - [BENCHES_v0.24.md](BENCHES_v0.24.md) — micro and runtime benchmarks with tuning tips.
 
