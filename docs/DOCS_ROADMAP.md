@@ -48,8 +48,9 @@ It highlights which modules are documented and notes areas that still need work.
 
 ## Partially Documented
 - `format`, `header`, and `ws` plus portions of the router internals now
-include example code in their docs. `sse` recently gained a section on
-`DataStream::from` and custom `Data` implementations.
+include example code in their docs. The WebSocket guide covers
+`upgrade_durable` and the `SessionMap` helper for Workers. `sse` recently
+gained a section on `DataStream::from` and custom `Data` implementations.
 The header guide covers `AcceptEncoding` parsing and `Set-Cookie`
 iteration. Further real‑world guides are still welcome. `Dir` was recently
 documented but additional recipes are encouraged.
