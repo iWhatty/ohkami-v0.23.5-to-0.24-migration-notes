@@ -4,6 +4,21 @@ Ohkami processes each network connection through a `Session` struct. The impleme
 
 A session owns the underlying TCP stream (or other runtime connection type) and drives the request/response loop. It applies a keep‑alive timeout between reads and routes each request through the shared `Router`. When the `ws` feature is enabled, a successful upgrade switches the session over to `WebSocket` management.
 
+The module is compiled only for native runtimes (`__rt_native__`). `Session` is generic over a connection type implementing `AsyncRead` and `AsyncWrite`. `TcpStream` provides the default `Connection` implementation which can be upgraded to a WebSocket when the `ws` feature is enabled.
+
+```rust
+pub(crate) struct Session<C> {
+    router: Arc<Router>,
+    connection: C,
+    ip: std::net::IpAddr,
+}
+
+pub(crate) trait Connection: AsyncRead + AsyncWrite + Unpin {
+    #[cfg(feature = "ws")]
+    fn into_websocket_stream(self) -> Result<TcpStream, &'static str>;
+}
+```
+
 Key behaviors:
 
 - Reads requests with `timeout_in` so idle connections close after `OHKAMI_KEEPALIVE_TIMEOUT` seconds.

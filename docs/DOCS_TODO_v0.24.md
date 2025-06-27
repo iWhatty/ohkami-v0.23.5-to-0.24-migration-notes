@@ -31,7 +31,7 @@ Each item should be checked off once the guide has been reviewed against the
 - [x] Review `ROUTER_v0.24.md`
 - [x] Review `RUNTIME_ADAPTERS_v0.24.md`
 - [ ] Review `SAMPLES_v0.24.md`
-- [ ] Review `SESSION_v0.24.md`
+- [x] Review `SESSION_v0.24.md`
 - [x] Review `SSE_v0.24.md`
 - [ ] Review `STARTUP_GUIDE_v0.24.md`
 - [x] Review `TASKS_v0.24.md`
