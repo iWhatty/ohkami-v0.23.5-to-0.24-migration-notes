@@ -11,8 +11,21 @@ Simple demonstration of returning typed JSON values.
 
 Two handlers show how the `JSON` wrapper serializes Rust structs:
 
-- `single_user` – returns one `User` from `/single`.
-- `multiple_users` – returns a `Vec<User>` from `/multiple`.
+```rust
+use ohkami::format::JSON;
+use ohkami::serde::Serialize;
+
+#[derive(Serialize)]
+struct User {
+    id:   u64,
+    name: String,
+}
+
+async fn single_user() -> JSON<User> { /* ... */ }
+async fn multiple_users() -> JSON<Vec<User>> { /* ... */ }
+```
+
+See [`src/main.rs`](../../ohkami-0.24/examples/json_response/src/main.rs) for the full file.
 
 ```bash
 $ cargo run --example json_response

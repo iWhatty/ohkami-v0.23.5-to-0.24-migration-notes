@@ -10,7 +10,8 @@ Use these guides when exploring version **0.24**.
 - [PRELUDE_v0.24.md](PRELUDE_v0.24.md) — common re‑exports and runtime helpers.
 - [PATTERNS_v0.24.md](PATTERNS_v0.24.md) — useful idioms taken from the implementation.
 - [ARCHITECTURE_v0.24.md](ARCHITECTURE_v0.24.md) — overview of crate modules.
-- [SESSION_v0.24.md](SESSION_v0.24.md) — how connections are managed, including the `Connection` trait and timeout control.
+- [SESSION_v0.24.md](SESSION_v0.24.md) — how connections are managed,
+  including the `Connection` trait and timeout control.
 - [RUNTIME_ADAPTERS_v0.24.md](RUNTIME_ADAPTERS_v0.24.md) — deploying to
   Workers or Lambda with examples.
 - [UTILS_v0.24.md](UTILS_v0.24.md) — helper functions and utility crate (stream,
@@ -45,6 +46,7 @@ Use these guides when exploring version **0.24**.
 - [FEATURE_REQUESTS.md](FEATURE_REQUESTS.md) — ideas for future improvements.
 - [examples/](examples/README.md) — documentation for the example projects.
   - [quick_start.md](examples/quick_start.md) — minimal starter server.
+  - [json_response.md](examples/json_response.md) — typed `JSON` wrapper usage.
 - [SAMPLES_v0.24.md](SAMPLES_v0.24.md) — overview of the larger sample projects.
 - [NOTES_FROM_SOURCE_v0.24.md](NOTES_FROM_SOURCE_v0.24.md) — design notes from the source.
 - [../ENV_SETUP.md](../ENV_SETUP.md) — initializing the workspace environment.
