@@ -60,3 +60,31 @@ async fn api(header::Authorization(BearerToken(token)): header::Authorization<Be
 ```
 
 The `Cookie` wrapper works similarly but parses the header into a struct that implements `Deserialize`. See the source for more details.
+
+## Redirect Responses
+
+Several status helpers represent redirects and require a `Location` header. Construct them with the target URL:
+
+```rust,no_run
+use ohkami::typed::status;
+
+async fn go_home() -> status::Found {
+    status::Found::at("/")
+}
+```
+
+The `at` and `to` constructors create `Found`, `MovedPermanently`, `TemporaryRedirect` and `PermanentRedirect` types. They implement `IntoResponse` and expose `.with_headers` just like other statuses.
+
+## Empty Body Statuses
+
+For responses that carry no body, types such as `NoContent` and `Accepted` can be returned directly without parameters:
+
+```rust
+use ohkami::typed::status;
+
+async fn ping() -> status::NoContent {
+    status::NoContent
+}
+```
+
+These ensure consistent headers while avoiding manual `Response` creation.
