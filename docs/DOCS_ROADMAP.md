@@ -27,6 +27,13 @@ It highlights which modules are documented and notes areas that still need work.
 - `ohkami/src/router` â tree structure, compression and lookup documented in
   [ROUTER_v0.24](ROUTER_v0.24.md).
 
+- `ohkami/src/format` explained in [FORMAT_v0.24](FORMAT_v0.24.md)
+  with a custom CSV example.
+- `ohkami/src/header` described in [HEADERS_v0.24](HEADERS_v0.24.md)
+  including parsing helpers and cookie iteration.
+- `ohkami/src/ws` covered in [WS_v0.24](WS_v0.24.md)
+  with `upgrade_durable`, `SessionMap` and split connections.
+
 - `ohkami/src/session` - lifecycle explained in [SESSION_v0.24](SESSION_v0.24.md)
 including connection trait details.
 - Cloud runtime adapters (`x_worker`, `x_lambda`) documented in
@@ -55,14 +62,10 @@ including connection trait details.
 - Workspace setup documented in [../ENV_SETUP.md](../ENV_SETUP.md).
 
 ## Partially Documented
-- `format` (including the `bound` traits and a CSV example),
-  `header`, and `ws` plus portions of the router internals now
-include example code in their docs. The WebSocket guide covers
-`upgrade_durable` and the `SessionMap` helper for Workers. `sse` recently
-gained a section on `DataStream::from` and custom `Data` implementations.
-The header guide covers `AcceptEncoding` parsing and `Set-Cookie`
-iteration. Further real‑world guides are still welcome. `Dir` was recently
-documented but additional recipes are encouraged.
+Some router internals still lack coverage. The WebSocket guide now shows
+`upgrade_durable` and the `SessionMap` helper for Workers. The `sse`
+module documents `DataStream::from` and custom `Data` types. Further
+real‑world guides for the `Dir` fang would be valuable.
 
 Additional gaps:
 
