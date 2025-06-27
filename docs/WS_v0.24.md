@@ -35,6 +35,12 @@ loop {
 the underlying `mews` crate if you need control over frame sizes or ping
 timeouts.
 
+On Cloudflare Workers the context also exposes `upgrade_durable` and
+`upgrade_durable_with`. These helpers connect a WebSocket to a Durable Object
+instance and return a `WebSocket` response.
+The [`SessionMap`](../ohkami-0.24/ohkami/src/ws/worker.rs)
+type can be used inside the object to track active sessions.
+
 
 
 
@@ -59,3 +65,21 @@ async fn main() {
     Ohkami::new(("/ws".GET(echo))).howl("localhost:4040").await;
 }
 ```
+
+### Cloudflare Durable Object
+
+When targeting Workers you may connect a WebSocket to a Durable Object via
+`upgrade_durable`:
+
+```rust,no_run
+async fn ws_chatroom(ctx: WebSocketContext<'_>, room: worker::Stub)
+    -> Result<WebSocket, worker::Error>
+{
+    ctx.upgrade_durable(room).await
+}
+```
+
+Inside the object a [`SessionMap`](../ohkami-0.24/ohkami/src/ws/worker.rs)
+stores metadata about connected sockets, allowing them to be resumed after
+hibernation.
+

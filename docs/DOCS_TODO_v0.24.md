@@ -39,7 +39,7 @@ Each item should be checked off once the guide has been reviewed against the
 - [x] Review `TLS_v0.24.md`
 - [ ] Review `TYPED_v0.24.md`
 - [x] Review `UTILS_v0.24.md`
-- [ ] Review `WS_v0.24.md`
+- [x] Review `WS_v0.24.md`
 
 ## Examples
 - [ ] Review `examples/README.md`
