@@ -47,6 +47,7 @@ Use these guides when exploring version **0.24**.
 - [examples/](examples/README.md) — documentation for the example projects.
   - [quick_start.md](examples/quick_start.md) — minimal starter server.
   - [json_response.md](examples/json_response.md) — typed `JSON` wrapper usage.
+  - [jwt.md](examples/jwt.md) — issuing and validating tokens with the `JWT` fang.
   - [sse.md](examples/sse.md) — streaming events with `DataStream`.
   - [static_files.md](examples/static_files.md) — directory serving with
     compression and caching.

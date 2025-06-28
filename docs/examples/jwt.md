@@ -1,22 +1,25 @@
 # JWT Authentication Example
 
-Generates JSON Web Tokens and secures a private route using the `JWT` fang.
-Set `JWT_SECRET` in `.env` and run the example to obtain a token from `/auth`.
-Use that token in the `Authorization` header to access `/private`.
+Shows how to issue and verify JSON Web Tokens. The secret key is read from
+`JWT_SECRET` using `dotenvy`. `/auth` returns a signed token and `/private`
+requires that token in the `Authorization` header.
 
 ## Files
 
-- `src/main.rs` – issues tokens and verifies them on a private route.
+- `src/main.rs` – issues tokens and validates them on a private route.
 - `.env.sample` – example of the required `JWT_SECRET` variable.
 
 ### `src/main.rs`
 
-- `jwt()` builds the `JWT` fang with the configured secret.
-- `auth` returns a new token from `/auth`.
-- `private` demonstrates extracting the validated payload via `Context`.
+- `jwt()` builds the `JWT` fang with `JWT::default` (HMAC-SHA256).
+- `auth` creates a token with a 24h expiry and a `sub` claim provided by a trait.
+- `private` extracts the verified `JwtPayload` via `Context`.
+
+See the [source](../../ohkami-0.24/examples/jwt/src/main.rs) for details.
 
 ```bash
 $ JWT_SECRET=mysecret cargo run --example jwt
 ```
 
-The included tests show handling large payloads and precompressed files.
+The included test `test_large_jwt` demonstrates issuing a very large payload.
+Run it with `OHKAMI_REQUEST_BUFSIZE=4096` or greater.

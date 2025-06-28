@@ -51,6 +51,7 @@ including connection trait details.
 - Example projects in `samples/` summarized in [SAMPLES_v0.24](SAMPLES_v0.24.md).
 - Quick start server documented in [examples/quick_start.md](examples/quick_start.md).
 - JSON serialization illustrated in [examples/json_response.md](examples/json_response.md).
+- Token based auth shown in [examples/jwt.md](examples/jwt.md)
 - Server‑sent events showcased in [examples/sse.md](examples/sse.md).
 - Static file options covered in
   [examples/static_files.md](examples/static_files.md).
