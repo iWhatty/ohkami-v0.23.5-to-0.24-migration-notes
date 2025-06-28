@@ -45,7 +45,7 @@ Each item should be checked off once the guide has been reviewed against the
 - [ ] Review `examples/README.md`
 - [ ] Review `examples/basic_auth.md`
 - [ ] Review `examples/chatgpt.md`
-- [ ] Review `examples/derive_from_request.md`
+- [x] Review `examples/derive_from_request.md`
 - [ ] Review `examples/form.md`
 - [ ] Review `examples/hello.md`
 - [ ] Review `examples/html_layout.md`
