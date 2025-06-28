@@ -46,7 +46,7 @@ including connection trait details.
   `#[operation]`, `#[worker]` and `#[bindings]`.
 - `ohkami_openapi` documented in [OPENAPI_v0.24](OPENAPI_v0.24.md) with examples
   for `openapi::Tag` and custom `#[openapi::operation]` overrides.
-- Dependency injection and typed error patterns now covered in
+- Dependency injection, typed error handling and custom path parameter parsing now covered in
   [PATTERNS_v0.24](PATTERNS_v0.24.md).
 - Example projects in `samples/` summarized in [SAMPLES_v0.24](SAMPLES_v0.24.md).
 - Quick start server documented in [examples/quick_start.md](examples/quick_start.md).
