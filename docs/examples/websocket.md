@@ -5,6 +5,10 @@ Several echo servers showcasing different ways to use WebSockets in Ohkami.
 `/echo3` demonstrates splitting the connection.  Static HTML templates are served
 from `template/` for testing with a browser.
 
+The server installs a `Logger` fang and uses the `Dir` fang to serve the
+browser client. Each handler receives a `WebSocketContext` and either upgrades
+the connection or returns a type that does.
+
 ## Files
 
 - `src/main.rs` – contains four echo handlers and mounts the routes.
@@ -18,6 +22,16 @@ Each handler shows a different upgrade pattern:
 - `echo_text_2` – returns a type implementing `IntoResponse` for deferred upgrade.
 - `echo_text_3` – splits the socket and spawns tasks to manage read/write.
 - `echo4` – demonstrates spawning without awaiting the join handle.
+
+```rust,ignore
+Ohkami::new((Logger,
+    "/".Dir("./template").omit_extensions([".html"]),
+    "/echo1".GET(echo_text),
+    "/echo2/:name".GET(echo_text_2),
+    "/echo3/:name".GET(echo_text_3),
+    "/echo4/:name".GET(echo4),
+))
+```
 
 ```bash
 $ cargo run --example websocket
