@@ -52,6 +52,7 @@ including connection trait details.
 - Quick start server documented in [examples/quick_start.md](examples/quick_start.md).
 - JSON serialization illustrated in [examples/json_response.md](examples/json_response.md).
 - Token based auth shown in [examples/jwt.md](examples/jwt.md)
+- HTTP Basic auth covered in [examples/basic_auth.md](examples/basic_auth.md)
 - Custom extraction traits in [examples/derive_from_request.md](examples/derive_from_request.md)
 - File uploads demonstrated in [examples/form.md](examples/form.md)
 - Server‑sent events showcased in [examples/sse.md](examples/sse.md).

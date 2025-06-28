@@ -1,26 +1,45 @@
 # Basic Auth Example
 
-This example shows how to protect a route using HTTP Basic authentication.
-
-It creates a nested `Ohkami` instance secured by the `BasicAuth` fang.  The outer
-server exposes a public `/hello` endpoint and a `/private` endpoint that requires
-the configured credentials.
+Demonstrates guarding a nested Ohkami tree with HTTP Basic authentication. A
+`BasicAuth` fang protects the inner application while the outer server keeps a
+public `/hello` route available.
 
 ## Files
 
-- `src/main.rs` – configures a nested `Ohkami` protected by `BasicAuth`.
+- `src/main.rs` – sets up the credentials and routers.
 
 ### `src/main.rs`
 
-`private_ohkami` defines the secured portion with its own route. The outer
-`Ohkami` mounts both the public `/hello` and `/private/hello` which delegates to
-the inner application.
+```rust
+use ohkami::prelude::*;
+use ohkami::fang::BasicAuth;
+
+#[tokio::main]
+async fn main() {
+    let private_ohkami = Ohkami::new((
+        BasicAuth {
+            username: "master of hello",
+            password: "world"
+        },
+        "/hello".GET(|| async {"Hello, private :)"})
+    ));
+
+    Ohkami::new((
+        "/hello".GET(|| async {"Hello, public!"}),
+        "/private".By(private_ohkami)
+    )).howl("localhost:8888").await
+}
+```
+
+See [`src/main.rs`](../../ohkami-0.24/examples/basic_auth/src/main.rs) for the
+full file.
 
 Run it with:
 
 ```bash
-$ cargo run --example basic_auth
+cargo run -p basic_auth
 ```
 
 Then access `http://localhost:8888/hello` for the public route or
-`http://localhost:8888/private/hello` with the credentials `master of hello` / `world`.
+`http://localhost:8888/private/hello` with the credentials `master of hello` /
+`world`. Avoid Basic Auth over plain HTTP; use HTTPS in production.

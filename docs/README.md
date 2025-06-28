@@ -48,6 +48,7 @@ Use these guides when exploring version **0.24**.
 - [examples/](examples/README.md) — documentation for the example projects.
   - [quick_start.md](examples/quick_start.md) — minimal starter server.
   - [json_response.md](examples/json_response.md) — typed `JSON` wrapper usage.
+  - [basic_auth.md](examples/basic_auth.md) — protecting routes with HTTP Basic authentication.
   - [jwt.md](examples/jwt.md) — issuing and validating tokens with the `JWT` fang.
   - [derive_from_request.md](examples/derive_from_request.md) — custom `FromRequest` traits.
   - [form.md](examples/form.md) — multipart uploads with `Multipart` and `File`.
