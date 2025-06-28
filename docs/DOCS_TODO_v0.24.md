@@ -43,7 +43,7 @@ Each item should be checked off once the guide has been reviewed against the
 
 ## Examples
 - [ ] Review `examples/README.md`
-- [ ] Review `examples/basic_auth.md`
+- [x] Review `examples/basic_auth.md`
 - [ ] Review `examples/chatgpt.md`
 - [x] Review `examples/derive_from_request.md`
 - [x] Review `examples/form.md`
