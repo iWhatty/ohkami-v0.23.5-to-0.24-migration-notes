@@ -48,7 +48,7 @@ Each item should be checked off once the guide has been reviewed against the
 - [x] Review `examples/derive_from_request.md`
 - [x] Review `examples/form.md`
 - [ ] Review `examples/hello.md`
-- [ ] Review `examples/html_layout.md`
+- [x] Review `examples/html_layout.md`
 - [x] Review `examples/json_response.md`
 - [x] Review `examples/jwt.md`
 - [ ] Review `examples/multiple-single-threads.md`

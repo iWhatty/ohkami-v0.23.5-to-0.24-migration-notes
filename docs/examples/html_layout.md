@@ -1,19 +1,25 @@
 # HTML Layout with UIbeam
 
-Uses the `uibeam` crate to compose a small HTML UI and wrap each response in a
-layout template.  Querying `/?init=5` shows a counter starting at 5 that can be
+This example demonstrates server-side HTML rendering using the
+[`uibeam`](https://crates.io/crates/uibeam) crate.
+A [`Layout`](../../ohkami-0.24/examples/html_layout/src/main.rs#L7-L31)
+fang wraps each response in a page template that loads a Tailwind
+stylesheet from a CDN.
+
+Querying `/?init=5` shows a counter starting at `5` that can be
 incremented or decremented using simple JavaScript.
 
 ## Files
 
-- `src/main.rs` – defines the `Layout` fang and a simple counter component.
+- [`src/main.rs`](../../ohkami-0.24/examples/html_layout/src/main.rs)
+  defines the `Layout` fang and a `Counter` component.
 
-### `src/main.rs`
+### Key Pieces
 
-- `Layout::fang_with_title` wraps HTML responses with a page template.
-- `Counter` is a UIbeam component rendering the interactive counter.
-- `index` handler reads an optional `init` query parameter and returns the
-  rendered page via `HTML`.
+- `Layout::fang_with_title` wraps HTML responses with the template.
+- `Counter` renders the interactive counter UI.
+- `index` reads an optional `init` query parameter and returns the page
+  wrapped in `HTML`.
 
 Run:
 

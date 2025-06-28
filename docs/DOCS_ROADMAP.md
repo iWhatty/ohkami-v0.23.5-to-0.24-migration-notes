@@ -59,6 +59,7 @@ including connection trait details.
 - Server‑sent events showcased in [examples/sse.md](examples/sse.md).
 - Static file options covered in
   [examples/static_files.md](examples/static_files.md).
+- HTML layout with UIbeam shown in [examples/html_layout.md](examples/html_layout.md).
 - WebSocket echo patterns described in
   [examples/websocket.md](examples/websocket.md).
 - `Taskfile.yaml` tasks explained in [TASKS_v0.24](TASKS_v0.24.md) including check, test and bench.
