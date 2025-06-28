@@ -33,7 +33,7 @@ Each item should be checked off once the guide has been reviewed against the
 - [x] Review `SAMPLES_v0.24.md`
 - [x] Review `SESSION_v0.24.md`
 - [x] Review `SSE_v0.24.md`
-- [ ] Review `STARTUP_GUIDE_v0.24.md`
+- [x] Review `STARTUP_GUIDE_v0.24.md`
 - [x] Review `TASKS_v0.24.md`
 - [x] Review `TESTING_v0.24.md`
 - [x] Review `TLS_v0.24.md`

@@ -1,10 +1,14 @@
 # Ohkami v0.24 Start-up Guide
 
-This guide walks you through the basics of getting a project running with [Ohkami](https://github.com/ohkami-rs/ohkami) **v0.24**. It focuses on native runtime usage via `tokio`, but the steps are similar for other runtimes.
+This guide walks you through the basics of getting a project running with
+[Ohkami](https://github.com/ohkami-rs/ohkami) **v0.24**.
+It focuses on native runtime usage via `tokio`, but the steps are similar for
+other runtimes.
 
 ## Installation
 
-Add Ohkami to your `Cargo.toml` dependencies. The `rt_tokio` feature enables the async runtime support.
+Add Ohkami to your `Cargo.toml` dependencies.
+The `rt_tokio` feature enables the async runtime support.
 
 ```toml
 [dependencies]
@@ -22,7 +26,8 @@ ohkami = { version = "0.24", features = ["rt_tokio", "tls"] }
 
 ## Hello Ohkami
 
-Below is a minimal HTTP server that exposes two routes. Save this as `src/main.rs` in your Rust project.
+Below is a minimal HTTP server that exposes two routes.
+Save this as `src/main.rs` in your Rust project.
 
 ```rust,no_run
 use ohkami::prelude::*;
@@ -61,14 +66,20 @@ Hello, your_name!
 
 ## Exploring More Features
 
-Ohkami provides optional features for WebSocket, Server‑Sent Events, OpenAPI document generation and more. Enable them in `Cargo.toml` and refer to the README in `ohkami-0.24/` for detailed examples.
+Ohkami provides optional features for WebSocket, Server‑Sent Events and
+automatic OpenAPI documentation.
+Enable them in `Cargo.toml` and refer to the README under `ohkami-0.24/` for
+detailed examples.
 
 ### TLS Example
 
 Create certificate files and run an HTTPS server:
 
 ```bash
-$ openssl req -x509 -newkey rsa:4096 -nodes -keyout server.key -out server.crt -days 365 -subj "/CN=localhost"
+$ openssl req \
+    -x509 -newkey rsa:4096 -nodes \
+    -keyout server.key -out server.crt \
+    -days 365 -subj "/CN=localhost"
 ```
 
 ```rust,no_run
@@ -131,14 +142,18 @@ backends:
 - `OHKAMI_WEBSOCKET_TIMEOUT` – WebSocket timeout in seconds (default **3600**).
 
 Increase these values if your service receives large headers or long‑lived WebSocket connections.
+See [CONFIGURATION_v0.24](CONFIGURATION_v0.24.md) for details on these variables.
 
 ## Why Ohkami?
 
 - **Macro‑less APIs**: Intuitive and type‑safe route definitions.
-- **Multiple runtimes**: Works with `tokio`, `smol`, `nio`, `glommio`, and cloud runtimes like Workers or Lambda.
+- **Multiple runtimes**: Works with `tokio`, `smol`, `nio`, `glommio`, and cloud
+  runtimes like Workers or Lambda.
 - **WebSocket & SSE**: Built‑in asynchronous support.
 - **OpenAPI integration**: Generate API docs automatically.
 - **High performance**: Minimal overhead with convenient testing tools.
 
-Explore the `examples/` directory under `ohkami-0.24` for more usage patterns. Check the main [README](../ohkami-0.24/README.md) for a comprehensive feature list.
+Explore the `examples/` directory under `ohkami-0.24` for more usage patterns.
+Check the main [README](../ohkami-0.24/README.md) for a comprehensive feature
+list.
 
