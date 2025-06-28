@@ -17,6 +17,7 @@ It highlights which modules are documented and notes areas that still need work.
   [RESPONSE_v0.24](RESPONSE_v0.24.md) (body helpers and typed statuses).
 - `ohkami/src/typed` â explained in [TYPED_v0.24](TYPED_v0.24.md).
 - `ohkami/src/lib.rs` â crate root documented in the main README.
+- Startup instructions and TLS example covered in [STARTUP_GUIDE_v0.24](STARTUP_GUIDE_v0.24.md).
 - `ohkami/src/lib.rs::prelude` — exports documented in [PRELUDE_v0.24](PRELUDE_v0.24.md)
   with notes on runtime gating.
 - `ohkami/src/ohkami/dir` — static file serving in [DIR_v0.24](DIR_v0.24.md),
