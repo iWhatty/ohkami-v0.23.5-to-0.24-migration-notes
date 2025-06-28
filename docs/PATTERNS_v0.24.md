@@ -145,3 +145,37 @@ impl IntoResponse for MyError {
 [thiserror](https://crates.io/crates/thiserror) can help reduce boilerplate for
 these conversions.
 
+
+## Custom Path Parameters
+
+`FromParam` lets handlers accept structured values from route segments.
+Implement it on your own type to parse the percent-decoded parameter string:
+
+```rust
+use std::borrow::Cow;
+use ohkami::{FromParam, Response};
+
+struct HexId(u64);
+
+impl<'p> FromParam<'p> for HexId {
+    type Error = Response;
+
+    fn from_param(param: Cow<'p, str>) -> Result<Self, Self::Error> {
+        u64::from_str_radix(&param, 16)
+            .map(HexId)
+            .map_err(|_| Response::BadRequest())
+    }
+}
+```
+
+Apply it directly in a handler:
+
+```rust
+async fn show(HexId(id): HexId) -> String {
+    format!("0x{id:x}")
+}
+```
+
+Implement `openapi_param` when the OpenAPI feature is enabled.
+This allows the generator to document the parameter schema.
+

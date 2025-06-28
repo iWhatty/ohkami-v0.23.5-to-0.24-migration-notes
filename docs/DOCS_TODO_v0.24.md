@@ -23,7 +23,7 @@ Each item should be checked off once the guide has been reviewed against the
 - [x] Review `MACROS_v0.24.md`
 - [ ] Review `NOTES_FROM_SOURCE_v0.24.md`
 - [x] Review `OPENAPI_v0.24.md`
-- [ ] Review `PATTERNS_v0.24.md`
+- [x] Review `PATTERNS_v0.24.md`
 - [x] Review `PRELUDE_v0.24.md`
 - [ ] Review `README.md`
 - [x] Review `REQUEST_v0.24.md`
