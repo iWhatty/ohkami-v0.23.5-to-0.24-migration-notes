@@ -9,7 +9,21 @@ A simple `Logger` fang prints each request and response for clarity.
 - `src/main.rs` – form handler logic.
 - `form.html` – sample HTML form.
 
+See [`src/main.rs`](../../ohkami-0.24/examples/form/src/main.rs) and
+[`form.html`](../../ohkami-0.24/examples/form/form.html) for the full example.
+
 ### `src/main.rs`
+
+The handler uses the `Multipart` wrapper:
+
+```rust
+#[derive(Deserialize)]
+struct FormData<'req> {
+    #[serde(rename = "account-name")]
+    account_name: Option<&'req str>,
+    pics: Vec<File<'req>>,
+}
+```
 
 - `get_form` returns the HTML form on `/form`.
 - `post_submit` parses a multipart request at `/submit` and logs the result.
