@@ -54,6 +54,8 @@ including connection trait details.
 - Server‑sent events showcased in [examples/sse.md](examples/sse.md).
 - Static file options covered in
   [examples/static_files.md](examples/static_files.md).
+- WebSocket echo patterns described in
+  [examples/websocket.md](examples/websocket.md).
 - `Taskfile.yaml` tasks explained in [TASKS_v0.24](TASKS_v0.24.md) including check, test and bench.
 - Benchmark crates explained in [BENCHES_v0.24](BENCHES_v0.24.md), including lists
   of micro benchmark modules and runtime comparison crates.

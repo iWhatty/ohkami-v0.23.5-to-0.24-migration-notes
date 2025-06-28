@@ -55,4 +55,4 @@ Each item should be checked off once the guide has been reviewed against the
 - [x] Review `examples/quick_start.md`
 - [x] Review `examples/sse.md`
 - [x] Review `examples/static_files.md`
-- [ ] Review `examples/websocket.md`
+- [x] Review `examples/websocket.md`
