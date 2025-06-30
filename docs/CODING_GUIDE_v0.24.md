@@ -4,6 +4,17 @@ This guide summarizes the main APIs found in the `ohkami` crate.  It pulls
 together examples from the repository and highlights useful patterns to get
 you productive quickly.
 
+Most applications use one of Ohkami's **runtime features** to select an async
+executor. Enable the feature that matches your environment in `Cargo.toml`:
+
+```toml
+[dependencies]
+ohkami = { version = "0.24", features = ["rt_tokio"] }
+```
+
+Available runtimes include `rt_tokio`, `rt_smol`, `rt_nio`, `rt_glommio`,
+`rt_worker` and `rt_lambda`.
+
 ## Creating an Application
 
 Construct an [`Ohkami`](../ohkami-0.24/ohkami/src/ohkami/mod.rs) by combining
@@ -74,6 +85,23 @@ async fn create() -> status::Created<&'static str> {
     status::Created("done")
 }
 ```
+
+### Typed Headers
+
+Common request and response headers also have typed wrappers under
+[`typed::header`](../ohkami-0.24/ohkami/src/typed/header.rs).
+Handlers can declare headers as parameters to parse them automatically:
+
+```rust
+use ohkami::typed::header::UserAgent;
+
+async fn index(agent: Option<UserAgent>) -> String {
+    format!("request from {agent:?}")
+}
+```
+
+The `ResponseHeaders` type offers setter methods for generating well formed
+headers without manual strings.
 
 ## Testing
 
