@@ -55,6 +55,7 @@ including connection trait details.
 - Dependency injection, typed error handling and custom path parameter parsing now covered in
   [PATTERNS_v0.24](PATTERNS_v0.24.md).
 - Example projects in `samples/` summarized in [SAMPLES_v0.24](SAMPLES_v0.24.md).
+- The [examples/README](examples/README.md) now lists every example with a short description.
 - Quick start server documented in [examples/quick_start.md](examples/quick_start.md).
 - JSON serialization illustrated in [examples/json_response.md](examples/json_response.md).
 - Token based auth shown in [examples/jwt.md](examples/jwt.md)
