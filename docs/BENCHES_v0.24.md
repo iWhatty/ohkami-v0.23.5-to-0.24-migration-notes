@@ -22,8 +22,12 @@ Micro benchmarks under `benches/benches` cover:
 - `imf_fixdate.rs` — formatting RFC 1123 dates.
 - `itoa.rs` — integer to ASCII conversions.
 - `request_headers.rs` — parsing incoming headers.
+- `response_headers.rs` — inserting and formatting outgoing headers.
+- `tuplemap_vs_hashmap.rs` — comparing custom `TupleMap` lookups to `HashMap`.
 
-Common helpers live in `benches/src`, such as the `header_map.rs` example map.
+Common helpers live in `benches/src`.  Modules implement
+`FxHashMap` wrappers and alternative header containers used by the
+benchmark suites (see `header_map.rs` and `response_headers/`).
 
 Runtime benchmarks live in `benches_rt`:
 
