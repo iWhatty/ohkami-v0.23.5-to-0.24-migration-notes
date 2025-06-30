@@ -20,6 +20,8 @@ It highlights which modules are documented and notes areas that still need work.
 - Startup instructions and TLS example covered in [STARTUP_GUIDE_v0.24](STARTUP_GUIDE_v0.24.md).
 - `ohkami/src/lib.rs::prelude` — exports documented in [PRELUDE_v0.24](PRELUDE_v0.24.md)
   with notes on runtime gating.
+- General conventions such as module layout, prelude imports and routing
+  helpers documented in [CODE_STYLE_v0.24](CODE_STYLE_v0.24.md).
 - `ohkami/src/ohkami/dir` — static file serving in [DIR_v0.24](DIR_v0.24.md),
  including notes on preloading, compression and cache headers.
 - `ohkami/src/config` â environment variables documented in
