@@ -13,7 +13,7 @@ Each item should be checked off once the guide has been reviewed against the
 - [x] Review `CONFIGURATION_v0.24.md`
 - [x] Review `DIR_v0.24.md`
 - [x] Review `DOCS_ROADMAP.md`
-- [ ] Review `DOCS_TODO_v0.24.md`
+- [x] Review `DOCS_TODO_v0.24.md`
 - [x] Review `ERROR_HANDLING_v0.24.md`
  - [x] Review `FANGS_v0.24.md`
 - [x] Review `FEATURE_FLAGS_v0.24.md`
@@ -21,7 +21,7 @@ Each item should be checked off once the guide has been reviewed against the
 - [x] Review `FORMAT_v0.24.md`
 - [x] Review `HEADERS_v0.24.md`
 - [x] Review `MACROS_v0.24.md`
-- [ ] Review `NOTES_FROM_SOURCE_v0.24.md`
+- [x] Review `NOTES_FROM_SOURCE_v0.24.md`
 - [x] Review `OPENAPI_v0.24.md`
 - [x] Review `PATTERNS_v0.24.md`
 - [x] Review `PRELUDE_v0.24.md`
