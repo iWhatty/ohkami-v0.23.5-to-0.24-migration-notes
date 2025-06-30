@@ -54,6 +54,7 @@ Use these guides when exploring version **0.24**.
   - [derive_from_request.md](examples/derive_from_request.md) — custom `FromRequest` traits.
   - [form.md](examples/form.md) — multipart uploads with `Multipart` and `File`.
   - [hello.md](examples/hello.md) — starter server with logging and custom headers.
+  - [chatgpt.md](examples/chatgpt.md) — relay ChatGPT responses using SSE.
   - [sse.md](examples/sse.md) — streaming events with `DataStream`.
   - [static_files.md](examples/static_files.md) — directory serving with
     compression and caching.
