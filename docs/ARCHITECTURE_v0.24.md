@@ -1,6 +1,7 @@
 # Ohkami v0.24 Architecture
 
-This overview explains how the framework is organized inside the `ohkami` crate so developers know where to look when exploring the source.
+This guide explains how the framework is organized so you can quickly locate
+modules in the source tree.
 
 ## Crate Layout
 
@@ -26,17 +27,33 @@ ohkami/
     x_lambda.rs      - AWS Lambda adapter (feature `rt_lambda`)
 ```
 
-Additional crates in the workspace include `ohkami_macros` for procedural macros, `ohkami_lib` with lightweight helpers and `ohkami_openapi` for OpenAPI generation.
+The workspace also contains `ohkami_macros` for procedural macros,
+`ohkami_lib` with lightweight helpers and `ohkami_openapi` for specification generation.
+
+### Runtime Abstraction
+
+A private `__rt__` module hides the differences between async runtimes.
+It re‑exports `TcpListener`, `TcpStream` and common I/O traits based on the
+selected `rt_*` feature so the rest of the crate can stay runtime agnostic.
 
 ## Request Flow
 
-Incoming connections are accepted by a runtime specific server. Each socket is wrapped in a `Session` which reads requests using the buffer size and timeouts defined in [`config.rs`](../ohkami-0.24/ohkami/src/config.rs). A parsed [`Request`](../ohkami-0.24/ohkami/src/request/mod.rs) is passed to the router which locates the matching route and any attached *fangs*. Fangs run before and/or after the handler to implement middleware behaviors. The handler returns a [`Response`](../ohkami-0.24/ohkami/src/response/mod.rs) which is written back to the connection.
+Each server connection is wrapped in a [`Session`](../ohkami-0.24/ohkami/src/session/mod.rs).
+It reads the request using the timeouts and buffer sizes from
+[`config.rs`](../ohkami-0.24/ohkami/src/config.rs). The parsed
+[`Request`](../ohkami-0.24/ohkami/src/request/mod.rs) is routed to a handler
+and its associated *fangs*. After the handler finishes, a
+[`Response`](../ohkami-0.24/ohkami/src/response/mod.rs) is written back to the
+client.
 
 Optional features extend this flow:
 
-- `ws` upgrades a request to a WebSocket handled by [`ws::WebSocket`](../ohkami-0.24/ohkami/src/ws).
+- `ws` upgrades a request to a WebSocket handled by
+  [`ws::WebSocket`](../ohkami-0.24/ohkami/src/ws).
 - `sse` streams events using [`sse::DataStream`](../ohkami-0.24/ohkami/src/sse).
-- `tls` wraps the TCP stream in a [`TlsStream`](../ohkami-0.24/ohkami/src/tls/mod.rs).
+- `tls` wraps the TCP stream in a
+  [`TlsStream`](../ohkami-0.24/ohkami/src/tls/mod.rs).
 - `openapi` generates documentation via `ohkami_openapi`.
 
-Understanding this structure helps navigate the source code and customize pieces for your own projects.
+Understanding this layout helps navigate the codebase and customize pieces for
+your own projects.
