@@ -81,7 +81,7 @@ Additional gaps:
 
 - Benchmarking basics are documented but real performance numbers are still
   missing.
-- More realâworld taskfile usage examples would help new contributors.
+- More real-world taskfile usage examples would help new contributors.
 - Utility modules `ohkami_lib::stream`, `slice`, `time` and `num` are now covered
   in [UTILS_v0.24](UTILS_v0.24.md).
 - The AWS Lambda WebSocket adapter remains unfinished and lacks documentation.
