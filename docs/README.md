@@ -10,7 +10,7 @@ Use these guides when exploring version **0.24**.
 - [PRELUDE_v0.24.md](PRELUDE_v0.24.md) — common re‑exports and runtime helpers.
 - [PATTERNS_v0.24.md](PATTERNS_v0.24.md) — idioms for nesting, dependency injection,
   typed errors and custom path parameters.
-- [ARCHITECTURE_v0.24.md](ARCHITECTURE_v0.24.md) — overview of crate modules.
+- [ARCHITECTURE_v0.24.md](ARCHITECTURE_v0.24.md) — crate layout and runtime abstraction.
 - [SESSION_v0.24.md](SESSION_v0.24.md) — how connections are managed,
   including the `Connection` trait and timeout control.
 - [RUNTIME_ADAPTERS_v0.24.md](RUNTIME_ADAPTERS_v0.24.md) — deploying to
