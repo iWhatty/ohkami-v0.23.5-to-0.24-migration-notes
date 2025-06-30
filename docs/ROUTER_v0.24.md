@@ -76,3 +76,31 @@ The lookup algorithm walks these nodes using
 It matches static bytes or captures parameters using `split_next_section` and
 returns the handler if the entire path matches.
 
+
+## Automatic OPTIONS Handlers
+
+`register_handlers` always installs an `OPTIONS` route for each path. It gathers
+allowed methods and creates a handler using `Handler::default_options_with`.
+See lines 132-152 in [`base.rs`](../ohkami-0.24/ohkami/src/router/base.rs).
+
+## Nesting Ohkami Instances
+
+The `Route::By` helper nests one `Ohkami` under another. Internally
+`Router::merge_another` merges the child tree and fangs into the parent.
+Conflicting routes are rejected unless overriding the `OPTIONS` handler.
+See [`base.rs` lines 155-195](../ohkami-0.24/ohkami/src/router/base.rs#L155-L195).
+
+## Parameter Validation
+
+During `finalize()` each handler's expected parameter count is checked against
+the capturing route. A mismatch triggers an assert so mistakes are caught at
+startup. See lines 212‑220 of
+[`base.rs`](../ohkami-0.24/ohkami/src/router/base.rs#L212-L220).
+
+## Native Runtime Compression
+
+When compiled with the `__rt_native__` feature the routing tree is compressed.
+`Node::from` merges adjacent static segments and drops empty nodes to reduce
+lookup time. See lines 272‑289 of
+[`final.rs`](../ohkami-0.24/ohkami/src/router/final.rs#L272-L289).
+
