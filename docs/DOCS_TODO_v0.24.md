@@ -17,7 +17,7 @@ Each item should be checked off once the guide has been reviewed against the
 - [x] Review `ERROR_HANDLING_v0.24.md`
  - [x] Review `FANGS_v0.24.md`
 - [x] Review `FEATURE_FLAGS_v0.24.md`
-- [ ] Review `FEATURE_REQUESTS.md`
+- [x] Review `FEATURE_REQUESTS.md`
 - [x] Review `FORMAT_v0.24.md`
 - [x] Review `HEADERS_v0.24.md`
 - [x] Review `MACROS_v0.24.md`

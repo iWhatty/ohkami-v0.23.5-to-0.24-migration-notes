@@ -95,6 +95,8 @@ Additional gaps:
 - Utility modules `ohkami_lib::stream`, `slice`, `time` and `num` are now covered
   in [UTILS_v0.24](UTILS_v0.24.md).
 - The AWS Lambda WebSocket adapter remains unfinished and lacks documentation.
+- Outstanding ideas and missing features are summarized in
+  [FEATURE_REQUESTS.md](FEATURE_REQUESTS.md).
 - Each guide should be audited for accuracy. See
   [DOCS_TODO_v0.24.md](DOCS_TODO_v0.24.md) for the full checklist.
 
