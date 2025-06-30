@@ -63,5 +63,5 @@ Use these guides when exploring version **0.24**.
   - [html_layout.md](examples/html_layout.md) — wrapping responses with a UIbeam layout.
   - [websocket.md](examples/websocket.md) — echo patterns and upgrade options.
 - [SAMPLES_v0.24.md](SAMPLES_v0.24.md) — overview of the sample projects with Workers templates.
-- [NOTES_FROM_SOURCE_v0.24.md](NOTES_FROM_SOURCE_v0.24.md) — design notes from the source.
+- [NOTES_FROM_SOURCE_v0.24.md](NOTES_FROM_SOURCE_v0.24.md) - design notes: router and Dir.
 - [../ENV_SETUP.md](../ENV_SETUP.md) — initializing the workspace environment.

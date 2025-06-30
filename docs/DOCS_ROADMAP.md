@@ -30,6 +30,8 @@ It highlights which modules are documented and notes areas that still need work.
   startup through the [`CONFIG`](../ohkami-0.24/ohkami/src/config.rs) static.
 - `ohkami/src/router` â tree structure, compression and lookup documented in
   [ROUTER_v0.24](ROUTER_v0.24.md).
+- Notes in [NOTES_FROM_SOURCE_v0.24.md](NOTES_FROM_SOURCE_v0.24.md) cover router defaults.
+  Dir fang and typed headers are also summarized.
 
 - `ohkami/src/format` explained in [FORMAT_v0.24](FORMAT_v0.24.md)
   with a custom CSV example.

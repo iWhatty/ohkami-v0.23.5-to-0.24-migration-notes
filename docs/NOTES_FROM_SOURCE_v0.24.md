@@ -52,6 +52,20 @@ It returns a typed error response if any header is missing. Once validated, `ctx
 
 [`util.rs`](../ohkami-0.24/ohkami/src/util.rs) exposes logging macros (`INFO!`, `WARNING!`, `ERROR!`, `DEBUG!`) that work across native and Worker runtimes. Helper functions cover base64 encoding, cookie iteration, percent encoding and timeouts.
 
+## Router Observations
+
+[`router`](../ohkami-0.24/ohkami/src/router) builds a tree of `Node` structs for each HTTP method. Registering handlers automatically creates an `OPTIONS` handler listing allowed methods. Nesting `Ohkami` instances merges their routes and middleware via [`ByAnother`](../ohkami-0.24/ohkami/src/ohkami/routing.rs).
+
+## Static Directory Fang
+
+The [`Dir`](../ohkami-0.24/ohkami/src/ohkami/dir.rs) fang preloads files and can serve precompressed assets when accepted.
+Options include `serve_dotfiles`, `omit_extensions` and custom `etag` generation. Cache validation uses `If-None-Match` and `If-Modified-Since`.
+
+## Typed Header Wrappers
+
+Macros in [`typed::header`](../ohkami-0.24/ohkami/src/typed/header.rs) generate wrappers like `Authorization<T>` that implement `FromRequest`.
+Implement `FromHeader` for custom parsing.
+
 ## Additional References
 
 The [STARTUP_GUIDE](STARTUP_GUIDE_v0.24.md) shows how to bootstrap a TLS server. Further examples live under [docs/examples](examples/README.md).
