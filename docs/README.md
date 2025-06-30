@@ -4,6 +4,9 @@ This directory collects learning material for the
 [Ohkami](https://github.com/ohkami-rs/ohkami) web framework.
 Use these guides when exploring version **0.24**.
 
+For a quick project overview, see the main
+[README](../ohkami-0.24/README.md) in the source tree.
+
 - [STARTUP_GUIDE_v0.24.md](STARTUP_GUIDE_v0.24.md) — installation, basic routing and TLS setup.
 - [CODING_GUIDE_v0.24.md](CODING_GUIDE_v0.24.md) — walkthrough of common APIs and patterns.
 - [CODE_STYLE_v0.24.md](CODE_STYLE_v0.24.md) — conventions used throughout the code base.
