@@ -39,7 +39,8 @@ Use these guides when exploring version **0.24**.
 - [FEATURE_FLAGS_v0.24.md](FEATURE_FLAGS_v0.24.md) — optional Cargo features
   detailing runtime and protocol flags.
 - [TASKS_v0.24.md](TASKS_v0.24.md) — `task` CLI usage including bench helpers.
-- [BENCHES_v0.24.md](BENCHES_v0.24.md) — micro and runtime benchmarks with tuning tips.
+- [BENCHES_v0.24.md](BENCHES_v0.24.md) — micro and runtime benchmarks with tuning tips,
+  including header container and `TupleMap` comparisons.
 
 - [CONFIGURATION_v0.24.md](CONFIGURATION_v0.24.md) — environment variables and runtime tuning.
 - [DOCS_ROADMAP.md](DOCS_ROADMAP.md) — what parts of the source have been documented so far.

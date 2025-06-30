@@ -7,7 +7,7 @@ Each item should be checked off once the guide has been reviewed against the
 ## Guides
 
 - [ ] Review `ARCHITECTURE_v0.24.md`
-- [ ] Review `BENCHES_v0.24.md`
+- [x] Review `BENCHES_v0.24.md`
 - [x] Review `CODE_STYLE_v0.24.md`
 - [ ] Review `CODING_GUIDE_v0.24.md`
 - [x] Review `CONFIGURATION_v0.24.md`

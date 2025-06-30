@@ -67,8 +67,9 @@ including connection trait details.
 - WebSocket echo patterns described in
   [examples/websocket.md](examples/websocket.md).
 - `Taskfile.yaml` tasks explained in [TASKS_v0.24](TASKS_v0.24.md) including check, test and bench.
-- Benchmark crates explained in [BENCHES_v0.24](BENCHES_v0.24.md), including lists
-  of micro benchmark modules and runtime comparison crates.
+- Benchmark crates explained in [BENCHES_v0.24](BENCHES_v0.24.md) with lists
+  of micro modules (including response header and `TupleMap` benchmarks) and
+  runtime comparison crates.
 - Cargo feature flags detailed in
   [FEATURE_FLAGS_v0.24](FEATURE_FLAGS_v0.24.md) including runtime specific notes.
 - Workspace setup documented in [../ENV_SETUP.md](../ENV_SETUP.md).
