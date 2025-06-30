@@ -84,10 +84,11 @@ including connection trait details.
 - Workspace setup documented in [../ENV_SETUP.md](../ENV_SETUP.md).
 
 ## Partially Documented
-Some router internals still lack coverage. The WebSocket guide now shows
-`upgrade_durable` and the `SessionMap` helper for Workers. The `sse`
-module documents `DataStream::from` and custom `Data` types. Further
-real‑world guides for the `Dir` fang would be valuable.
+Router internals are now covered in more detail with notes on automatic
+`OPTIONS` handlers, merging nested `Ohkami`s and native runtime compression.
+The WebSocket guide shows `upgrade_durable` and the `SessionMap` helper for
+Workers. The `sse` module documents `DataStream::from` and custom `Data`
+types. Further real‑world guides for the `Dir` fang would be valuable.
 
 Additional gaps:
 
