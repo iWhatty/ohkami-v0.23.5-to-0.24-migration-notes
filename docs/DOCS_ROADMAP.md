@@ -61,6 +61,8 @@ including connection trait details.
 - Hello world app in [examples/hello.md](examples/hello.md) showing custom
   fangs and typed status
 - Server‑sent events showcased in [examples/sse.md](examples/sse.md).
+- ChatGPT relay example in [examples/chatgpt.md](examples/chatgpt.md) shows
+  `DataStream` with an external API.
 - Static file options covered in
   [examples/static_files.md](examples/static_files.md).
 - HTML layout with UIbeam shown in [examples/html_layout.md](examples/html_layout.md).
