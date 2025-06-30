@@ -4,6 +4,16 @@ A slightly larger starter server with logging fangs and two routes:
 `/hc` for health checks and `/api` with query and JSON endpoints. It also shows
 how to add custom response headers and integrate `tracing` logs.
 
+Located in `ohkami-0.24/examples/hello`, this example demonstrates:
+
+- typed responses using [`NoContent`](../../ohkami-0.24/ohkami/src/typed/status.rs)
+  for the health check route
+- parsing query parameters with [`Query`](../../ohkami-0.24/ohkami/src/format/builtin/query.rs)
+- JSON extraction via [`JSON`](../../ohkami-0.24/ohkami/src/format/builtin/json.rs)
+- custom middleware with [`FangAction`](../../ohkami-0.24/ohkami/src/fang/middleware/util.rs)
+- `SetServer` writes a custom `Server` header via `res.headers.set()`
+- `LogRequest` prints the full request using `tracing`
+
 ## Files
 
 - `src/main.rs` – defines the routes and custom fangs used by the example.

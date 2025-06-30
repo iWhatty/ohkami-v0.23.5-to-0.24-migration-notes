@@ -56,8 +56,8 @@ including connection trait details.
 - HTTP Basic auth covered in [examples/basic_auth.md](examples/basic_auth.md)
 - Custom extraction traits in [examples/derive_from_request.md](examples/derive_from_request.md)
 - File uploads demonstrated in [examples/form.md](examples/form.md)
-- Hello server with fangs documented in
-  [examples/hello.md](examples/hello.md)
+- Hello world app in [examples/hello.md](examples/hello.md) showing custom
+  fangs and typed status
 - Server‑sent events showcased in [examples/sse.md](examples/sse.md).
 - Static file options covered in
   [examples/static_files.md](examples/static_files.md).
@@ -81,7 +81,7 @@ Additional gaps:
 
 - Benchmarking basics are documented but real performance numbers are still
   missing.
-- More realâworld taskfile usage examples would help new contributors.
+- More real-world taskfile usage examples would help new contributors.
 - Utility modules `ohkami_lib::stream`, `slice`, `time` and `num` are now covered
   in [UTILS_v0.24](UTILS_v0.24.md).
 - The AWS Lambda WebSocket adapter remains unfinished and lacks documentation.
