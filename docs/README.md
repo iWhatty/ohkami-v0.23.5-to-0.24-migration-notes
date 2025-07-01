@@ -17,7 +17,7 @@ For a quick project overview, see the main
 - [SESSION_v0.24.md](SESSION_v0.24.md) — how connections are managed,
   including the `Connection` trait and timeout control.
 - [RUNTIME_ADAPTERS_v0.24.md](RUNTIME_ADAPTERS_v0.24.md) — deploying to
-  Workers or Lambda with examples.
+  Workers or Lambda with examples, including Lambda WebSocket support.
 - [UTILS_v0.24.md](UTILS_v0.24.md) — helper functions and utility crate (stream,
   slice, num and time modules).
 - [MACROS_v0.24.md](MACROS_v0.24.md) — derives plus OpenAPI and Workers macros.
