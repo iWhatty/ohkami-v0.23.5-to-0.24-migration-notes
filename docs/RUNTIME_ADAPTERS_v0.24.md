@@ -50,9 +50,28 @@ async fn main() -> Result<(), lambda_runtime::Error> {
 ```
 
 With the `ws` feature enabled you can handle API Gateway WebSocket events using
-`LambdaWebSocket::handle`.
-An adapter to map between Lambda events and Ohkami `Request`/`Response` types is
-planned but not yet finalized.
+`LambdaWebSocket::handle`. This helper adapts an async function into a
+`lambda_runtime::Service` that receives a `LambdaWebSocket` instance. The type
+wraps the connection context and exposes `send` and `close` methods.
+
+```rust,no_run
+use ohkami::{LambdaWebSocket, LambdaWebSocketMESSAGE};
+use lambda_runtime::Error;
+
+#[tokio::main]
+async fn main() -> Result<(), Error> {
+    lambda_runtime::run(LambdaWebSocket::handle(echo)).await
+}
+
+async fn echo(mut ws: LambdaWebSocket<LambdaWebSocketMESSAGE>) -> Result<(), Error> {
+    ws.send(ws.event).await?;
+    ws.close().await?;
+    Ok(())
+}
+```
+
+An adapter to map between generic Lambda events and Ohkami `Request`/`Response`
+types is still planned but not yet finalized.
 
 These modules let you deploy the same application logic to native servers or
 serverless platforms with minimal changes.
