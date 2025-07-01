@@ -48,10 +48,17 @@ negotiate compressed responses.
 The helper `QValue::parse` converts a quality string like `"0.8"` into a sortable
 floating point representation.
 
-Typed helpers exist for many common headers.  For example `ResponseHeaders` has
-methods like `ContentType` and `CacheControl` which accept strongly typed
-wrappers.  Implement `FromHeader` for your own types to parse custom headers on
-incoming requests.
+Typed helpers exist for many common headers.  For example `ResponseHeaders`
+provides methods like `ContentType` and `CacheControl` which accept strongly
+typed wrappers.  Implement `FromHeader` for your own types to parse custom
+headers on incoming requests.
+
+### Precompressed Files
+
+`CompressionEncoding::from_file_path` detects algorithms from file extensions.
+It returns the remaining path with extensions removed so pre-compressed assets
+like `app.js.gz.br` can be served with the correct `Content-Encoding` header.
+`Dir` uses this helper to look up files preferred by `Accept-Encoding`.
 
 
 
