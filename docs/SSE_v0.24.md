@@ -1,8 +1,10 @@
 # Server‑Sent Events
 
 The `sse` feature provides the [`DataStream`](../ohkami-0.24/ohkami/src/sse)
-response type for sending event streams over HTTP.  Each item must implement the
-`Data` trait which converts it to a string.
+response type for sending event streams over HTTP. Each item must implement the
+`Data` trait which converts it to a string. `DataStream` implements
+`IntoResponse` so calling handlers can simply return it and the
+`content-type: text/event-stream` header is added automatically.
 
 ```rust
 async fn handler() -> DataStream {
@@ -12,6 +14,11 @@ async fn handler() -> DataStream {
     })
 }
 ```
+
+`DataStream::new` passes a [`handle::Stream`](../ohkami-0.24/ohkami/src/sse/mod.rs#L121)
+to the provided closure. Calling `send` on this handle queues an encoded value
+to be streamed to the client. The queue runs until the async block completes,
+yielding events in the order they are pushed.
 
 `DataStream` wraps any `Stream<Item = T>` where `T: Data`.  Calling
 `DataStream::new` spawns an async producer with a queue.  The response is sent
@@ -36,8 +43,9 @@ chunked encoding, so a reverse proxy is required if you need HTTP/2 or HTTP/3
 support.
 
 Implement the `Data` trait for custom event types to control how items are
-encoded before being sent.  When the `openapi` feature is active the
-implementation also contributes schema information to the generated document:
+encoded before being sent. When the `openapi` feature is active the
+implementation also contributes schema information to the generated
+document, allowing clients to infer the event payload type:
 
 ```rust
 use ohkami::sse::Data;
