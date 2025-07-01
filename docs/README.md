@@ -24,7 +24,8 @@ For a quick project overview, see the main
 - [FANGS_v0.24.md](FANGS_v0.24.md) — overview of builtin middleware and
   configuration options.
 - [FORMAT_v0.24.md](FORMAT_v0.24.md) — request/response body helpers and custom format examples.
-- [HEADERS_v0.24.md](HEADERS_v0.24.md) — common header utilities.
+- [HEADERS_v0.24.md](HEADERS_v0.24.md) — common header utilities with `QValue`
+  and compression helpers.
 - [DIR_v0.24.md](DIR_v0.24.md) — static directory fang with preloading,
   compression and caching details.
 - [REQUEST_v0.24.md](REQUEST_v0.24.md) — request structure, context store and extraction.

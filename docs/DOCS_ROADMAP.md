@@ -17,7 +17,8 @@ It highlights which modules are documented and notes areas that still need work.
   [RESPONSE_v0.24](RESPONSE_v0.24.md) (body helpers and typed statuses).
 - `ohkami/src/typed` â explained in [TYPED_v0.24](TYPED_v0.24.md).
 - `ohkami/src/lib.rs` â crate root documented in the main README.
-- `docs/README.md` links back to the crate README so readers can quickly reach the latest quick start.
+- `docs/README.md` points back to the crate README so new users can quickly reach
+  the latest quick start.
 - Module layout overviewed in [ARCHITECTURE_v0.24](ARCHITECTURE_v0.24.md).
 - Startup instructions and TLS example covered in [STARTUP_GUIDE_v0.24](STARTUP_GUIDE_v0.24.md).
 - `ohkami/src/lib.rs::prelude` — exports documented in [PRELUDE_v0.24](PRELUDE_v0.24.md)
@@ -37,7 +38,8 @@ It highlights which modules are documented and notes areas that still need work.
 - `ohkami/src/format` explained in [FORMAT_v0.24](FORMAT_v0.24.md)
   with a custom CSV example.
  - `ohkami/src/header` described in [HEADERS_v0.24](HEADERS_v0.24.md)
-   including typed header wrappers, parsing helpers and cookie iteration.
+   including typed header wrappers, parsing helpers, cookie iteration and
+   precompressed file detection.
 - `ohkami/src/ws` covered in [WS_v0.24](WS_v0.24.md)
   with `upgrade_durable`, `SessionMap` and split connections.
 
