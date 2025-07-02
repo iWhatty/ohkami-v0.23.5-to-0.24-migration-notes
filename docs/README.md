@@ -37,7 +37,8 @@ For a quick project overview, see the main
 - [TYPED_v0.24.md](TYPED_v0.24.md) — typed statuses and headers.
 - [OPENAPI_v0.24.md](OPENAPI_v0.24.md) — macros and `Ohkami::generate` for
   automatic OpenAPI documentation.
-- [TLS_v0.24.md](TLS_v0.24.md) — HTTPS support via `rustls` using `howls`.
+- [TLS_v0.24.md](TLS_v0.24.md) — HTTPS support via `rustls` using `howls` with a
+  certificate loading example.
 - [TESTING_v0.24.md](TESTING_v0.24.md) — debug-only in-memory harness for calling routes.
 - [WS_v0.24.md](WS_v0.24.md) — upgrading connections to WebSockets with
   Workers and Lambda adapters.
