@@ -55,6 +55,18 @@ objects. These rely on the `worker` runtime crate.
 environment bindings.  This removes boilerplate when accessing KV stores or other
 resources from Workers code.
 
+Pass an environment name such as `dev` to load bindings from that section of the
+configuration:
+
+```rust
+#[ohkami::bindings(dev)]
+struct DevBindings;
+```
+
+The generated struct implements `FromRequest` and exposes constants for any
+`vars` values so you can pull the bindings from a worker `Env` or use them
+directly.
+
 ```rust
 #[ohkami::bindings]
 struct Bindings;
