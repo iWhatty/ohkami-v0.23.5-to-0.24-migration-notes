@@ -12,6 +12,33 @@ async fn handler(ctx: WebSocketContext<'_>) -> WebSocket {
 }
 ```
 
+### AWS Lambda
+
+When compiled with the `rt_lambda` feature Ohkami exposes a
+`LambdaWebSocket` type for handling API Gateway WebSocket events.
+Use `LambdaWebSocket::handle` to adapt an async function into a
+`lambda_runtime::Service`:
+
+```rust,no_run
+use ohkami::{LambdaWebSocket, LambdaWebSocketMESSAGE};
+use lambda_runtime::Error;
+
+#[tokio::main]
+async fn main() -> Result<(), Error> {
+    lambda_runtime::run(LambdaWebSocket::handle(echo)).await
+}
+
+async fn echo(mut ws: LambdaWebSocket<LambdaWebSocketMESSAGE>) -> Result<(), Error> {
+    ws.send(ws.event).await?;
+    ws.close().await?;
+    Ok(())
+}
+```
+
+See [`x_lambda.rs`](../ohkami-0.24/ohkami/src/x_lambda.rs) for details on the
+implementation and client used to send responses back through the management
+API.
+
 Handlers receive a context extracted from the request. Calling `.upgrade` or
 `.upgrade_with` returns a `WebSocket` response that completes the handshake and
 runs the provided async closure.

@@ -38,7 +38,8 @@ For a quick project overview, see the main
   automatic OpenAPI documentation.
 - [TLS_v0.24.md](TLS_v0.24.md) — HTTPS support via `rustls` using `howls`.
 - [TESTING_v0.24.md](TESTING_v0.24.md) — debug-only in-memory harness for calling routes.
-- [WS_v0.24.md](WS_v0.24.md) — upgrading connections to WebSockets and Workers.
+- [WS_v0.24.md](WS_v0.24.md) — upgrading connections to WebSockets with
+  Workers and Lambda adapters.
 - [SSE_v0.24.md](SSE_v0.24.md) — streaming Server‑Sent Events with the
   `DataStream` queue and custom `Data` types.
 - [ROUTER_v0.24.md](ROUTER_v0.24.md) — how routes are organized and finalized.

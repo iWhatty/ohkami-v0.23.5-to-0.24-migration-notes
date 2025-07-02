@@ -41,7 +41,8 @@ It highlights which modules are documented and notes areas that still need work.
    including typed header wrappers, parsing helpers, cookie iteration and
    precompressed file detection.
 - `ohkami/src/ws` covered in [WS_v0.24](WS_v0.24.md)
-  with `upgrade_durable`, `SessionMap` and split connections.
+  with `upgrade_durable`, `SessionMap`, split connections
+  and the `LambdaWebSocket` helper for API Gateway.
 
 - `ohkami/src/session` - lifecycle explained in [SESSION_v0.24](SESSION_v0.24.md)
 including connection trait details.
