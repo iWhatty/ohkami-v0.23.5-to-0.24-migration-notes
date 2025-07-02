@@ -34,6 +34,18 @@ for c in res.headers.SetCookie() {
 }
 ```
 
+Each item is parsed with `SetCookie::from_raw` so invalid directives are ignored
+in debug builds with a warning. You can also parse a single header manually:
+
+```rust
+use ohkami::header::SetCookie;
+
+let raw = "user=xyz; HttpOnly; Max-Age=30";
+let sc = SetCookie::from_raw(raw)?;
+assert_eq!(sc.MaxAge(), Some(30));
+```
+
+
 ## Entity Tags
 `ETag` parses strong and weak entity tags.  Use `ETag::parse` or the iterator
 helpers to process conditional request headers.
