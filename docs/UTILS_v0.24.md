@@ -47,3 +47,27 @@ These helpers keep Ohkami lightweight while avoiding extra dependencies in user 
 - `slice` and `CowSlice` – manual byte slice types for zero-copy operations.
 - `num` – `itoa` and `hexized` for efficient number formatting.
 - `time` – `imf_fixdate` to produce RFC 9110 date strings.
+
+### Stream Queue Example
+
+The `stream` module includes a `queue` helper which spawns an async task pushing
+items into a buffer. The resulting stream can be combined with SSE or other
+code using `StreamExt` methods.
+
+```rust,no_run
+use ohkami::sse::DataStream;
+use ohkami::util::{stream, StreamExt};
+use tokio::time::{sleep, Duration};
+
+async fn events() -> DataStream {
+    DataStream::from(stream::queue(|mut q| async move {
+        for i in 0..3 {
+            sleep(Duration::from_secs(1)).await;
+            q.push(format!("tick {i}"));
+        }
+    }))
+}
+```
+
+See [`ohkami_lib/src/stream.rs`](../ohkami-0.24/ohkami_lib/src/stream.rs) for
+implementation details.
