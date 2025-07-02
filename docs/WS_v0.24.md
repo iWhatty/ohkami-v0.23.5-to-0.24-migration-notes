@@ -83,3 +83,24 @@ Inside the object a [`SessionMap`](../ohkami-0.24/ohkami/src/ws/worker.rs)
 stores metadata about connected sockets, allowing them to be resumed after
 hibernation.
 
+```rust,no_run
+use ohkami::ws::SessionMap;
+
+struct Room {
+    sessions: SessionMap<Session>,
+}
+
+impl Room {
+    async fn websocket_message(
+        &mut self,
+        ws: worker::WebSocket,
+        msg: worker::WebSocketIncomingMessage,
+    ) -> worker::Result<()> {
+        if let Some(session) = self.sessions.get_mut(&ws) {
+            // update session based on `msg`
+        }
+        Ok(())
+    }
+}
+```
+
