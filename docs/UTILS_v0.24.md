@@ -17,10 +17,33 @@ helpers and a small async stream adapter.
 
 ## Data Utilities
 
-- Base64 helpers: `base64_encode`, `base64_decode`, and URL‑safe variants.
+- Base64 helpers: `base64_encode`, `base64_decode`, `base64_decode_utf8` and
+  URL‑safe `base64_url_encode`/`base64_url_decode`.
 - `iter_cookies` parses a raw `Cookie` header into `(name, value)` pairs.
-- `unix_timestamp` returns the current Unix time and works in both native and worker environments.
+- Example:
+```rust
+let mut it = ohkami::util::iter_cookies(
+    "PHPSESSID=298zf09hf012fh2; csrftoken=u32t4o3tb3gg43"
+);
+assert_eq!(it.next(), Some(("PHPSESSID", "298zf09hf012fh2")));
+assert_eq!(it.next(), Some(("csrftoken", "u32t4o3tb3gg43")));
+assert_eq!(it.next(), None);
+```
+- `unix_timestamp` returns the current Unix time and works in both native and
+  worker environments.
 - `timeout_in` wraps a future with a timeout when using native runtimes.
+```rust,no_run
+use std::time::Duration;
+
+let result = ohkami::util::timeout_in(Duration::from_secs(1), async {
+    slow_operation().await
+}).await;
+if let Some(v) = result {
+    println!("finished: {v}");
+} else {
+    println!("timed out");
+}
+```
 - `percent_encode`, `percent_decode` and `percent_decode_utf8` provide basic URL
   encoding helpers used throughout the framework.
 
