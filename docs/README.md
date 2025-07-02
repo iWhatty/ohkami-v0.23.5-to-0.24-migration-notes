@@ -69,7 +69,8 @@ For a quick project overview, see the main
   - [static_files.md](examples/static_files.md) — directory serving with
     compression and caching.
   - [html_layout.md](examples/html_layout.md) — wrapping responses with a UIbeam layout.
-  - [websocket.md](examples/websocket.md) — echo patterns and upgrade options.
+  - [websocket.md](examples/websocket.md) — echo patterns, connection splitting
+    and Lambda integration.
 - [SAMPLES_v0.24.md](SAMPLES_v0.24.md) — overview of the sample projects with Workers templates.
 - [NOTES_FROM_SOURCE_v0.24.md](NOTES_FROM_SOURCE_v0.24.md) - design notes: router and Dir.
 - [../ENV_SETUP.md](../ENV_SETUP.md) — initializing the workspace environment.

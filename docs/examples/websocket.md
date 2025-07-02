@@ -36,3 +36,29 @@ Ohkami::new((Logger,
 ```bash
 $ cargo run --example websocket
 ```
+
+## AWS Lambda
+
+Ohkami can also handle API Gateway WebSocket events using `LambdaWebSocket`.
+Compile with the `rt_lambda` and `ws` features and pass a handler to
+`LambdaWebSocket::handle`:
+
+```rust,no_run
+use ohkami::{LambdaWebSocket, LambdaWebSocketMESSAGE};
+
+#[ohkami::lambda]
+async fn main() -> Result<(), lambda_runtime::Error> {
+    lambda_runtime::run(LambdaWebSocket::handle(echo)).await
+}
+
+async fn echo(
+    mut ws: LambdaWebSocket<LambdaWebSocketMESSAGE>
+) -> Result<(), lambda_runtime::Error> {
+    ws.send(ws.event).await?;
+    ws.close().await?;
+    Ok(())
+}
+```
+
+Implementation details live in
+[`x_lambda.rs`](../../ohkami-0.24/ohkami/src/x_lambda.rs).
