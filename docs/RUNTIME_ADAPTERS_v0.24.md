@@ -31,6 +31,17 @@ async fn app() -> ohkami::Ohkami {
 }
 ```
 
+Add an environment name like `dev` to pull bindings from that section of your
+configuration:
+
+```rust
+#[ohkami::bindings(dev)]
+struct DevBindings;
+```
+
+The generated struct implements `FromRequest` so handlers can receive it
+directly.
+
 See the inline examples in `x_worker.rs` for a full setup.
 
 ## AWS Lambda

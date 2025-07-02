@@ -20,7 +20,8 @@ For a quick project overview, see the main
   Workers or Lambda with examples, including Lambda WebSocket support.
 - [UTILS_v0.24.md](UTILS_v0.24.md) — helper functions with `stream::queue` example
   and slice, num and time modules.
-- [MACROS_v0.24.md](MACROS_v0.24.md) — derives plus OpenAPI and Workers macros.
+- [MACROS_v0.24.md](MACROS_v0.24.md) — derives plus OpenAPI and Workers macros
+  including `#[bindings(env)]` for environment specific bindings.
 - [FANGS_v0.24.md](FANGS_v0.24.md) — overview of builtin middleware and
   configuration options.
 - [FORMAT_v0.24.md](FORMAT_v0.24.md) — request/response body helpers and custom format examples.

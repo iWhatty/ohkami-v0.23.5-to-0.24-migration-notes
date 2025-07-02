@@ -47,12 +47,12 @@ It highlights which modules are documented and notes areas that still need work.
 including connection trait details.
 - Cloud runtime adapters (`x_worker`, `x_lambda`) documented in
   [RUNTIME_ADAPTERS_v0.24](RUNTIME_ADAPTERS_v0.24.md) now include
-  examples for `#[bindings]` and Lambda WebSocket handling.
+  examples for `#[bindings]` (with env selection) and Lambda WebSocket handling.
 - `util` helpers and the `ohkami_lib` crate covered in [UTILS_v0.24](UTILS_v0.24.md).
 - Error conversions via `IntoResponse` documented in
   [ERROR_HANDLING_v0.24](ERROR_HANDLING_v0.24.md).
 - Procedural macros in [MACROS_v0.24](MACROS_v0.24.md) now include examples for
-  `#[operation]`, `#[worker]` and `#[bindings]`.
+  `#[operation]`, `#[worker]` and `#[bindings(env)]`.
 - `ohkami_openapi` documented in [OPENAPI_v0.24](OPENAPI_v0.24.md) with examples
   for `openapi::Tag` and custom `#[openapi::operation]` overrides.
 - Dependency injection, typed error handling and custom path parameter parsing now covered in
