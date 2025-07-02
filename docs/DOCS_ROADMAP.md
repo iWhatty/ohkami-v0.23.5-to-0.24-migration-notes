@@ -99,7 +99,7 @@ Additional gaps:
   missing.
 - More real-world taskfile usage examples would help new contributors.
 - Utility modules `ohkami_lib::stream`, `slice`, `time` and `num` are now covered
-  in [UTILS_v0.24](UTILS_v0.24.md).
+  in [UTILS_v0.24](UTILS_v0.24.md) with a queue streaming example.
 - The AWS Lambda WebSocket adapter is partially implemented and now documented
   in [RUNTIME_ADAPTERS_v0.24](RUNTIME_ADAPTERS_v0.24.md), though the request and
   response mapping layer is still a work in progress.

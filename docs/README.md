@@ -18,8 +18,8 @@ For a quick project overview, see the main
   including the `Connection` trait and timeout control.
 - [RUNTIME_ADAPTERS_v0.24.md](RUNTIME_ADAPTERS_v0.24.md) — deploying to
   Workers or Lambda with examples, including Lambda WebSocket support.
-- [UTILS_v0.24.md](UTILS_v0.24.md) — helper functions and utility crate (stream,
-  slice, num and time modules).
+- [UTILS_v0.24.md](UTILS_v0.24.md) — helper functions with `stream::queue` example
+  and slice, num and time modules.
 - [MACROS_v0.24.md](MACROS_v0.24.md) — derives plus OpenAPI and Workers macros.
 - [FANGS_v0.24.md](FANGS_v0.24.md) — overview of builtin middleware and
   configuration options.
