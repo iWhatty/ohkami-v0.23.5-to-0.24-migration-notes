@@ -20,8 +20,15 @@ The same helper can be used with typed headers such as
 ## Cookie Builder
 
 `SetCookie` exposes a builder style API for generating `Set-Cookie` headers.
-All attributes like `MaxAge`, `Domain`, `Secure` and `SameSite` are optional and
-can be chained.
+All attributes are optional and the methods return the builder so calls can be
+chained.  Available helpers include:
+
+- `Expires(datetime)` – absolute expiry as a string, e.g. from
+  `ohkami::util::imf_fixdate`.
+- `MaxAge(seconds)` – relative lifetime in seconds.
+- `Domain(domain)` and `Path(path)` – scope the cookie.
+- `Secure()` and `HttpOnly()` – toggle those flags.
+- `SameSiteLax()`, `SameSiteNone()` and `SameSiteStrict()`.
 
 ```rust
 res.headers.set().SetCookie("id", "42", |c| c.Path("/").SameSiteLax());
