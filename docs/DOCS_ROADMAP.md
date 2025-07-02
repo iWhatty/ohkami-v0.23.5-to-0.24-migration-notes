@@ -76,7 +76,8 @@ including connection trait details.
   [examples/static_files.md](examples/static_files.md).
 - HTML layout with UIbeam shown in [examples/html_layout.md](examples/html_layout.md).
 - WebSocket echo patterns described in
-  [examples/websocket.md](examples/websocket.md).
+  [examples/websocket.md](examples/websocket.md) now include a Lambda
+  adapter example using `LambdaWebSocket::handle`.
 - Multiple single-threaded runtimes shown in
   [examples/multiple-single-threads.md](examples/multiple-single-threads.md).
 - `Taskfile.yaml` tasks explained in [TASKS_v0.24](TASKS_v0.24.md) including check, test and bench.
