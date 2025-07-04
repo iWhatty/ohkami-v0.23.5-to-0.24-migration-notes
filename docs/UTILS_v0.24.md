@@ -66,7 +66,9 @@ These helpers keep Ohkami lightweight while avoiding extra dependencies in user 
 
 ### Additional Modules
 
-- `stream` – async helpers like `queue` and `StreamExt` used by SSE and examples.
+- `stream` – async helpers including `queue` and `once` plus the `StreamExt` trait
+  with `map`, `filter`, `chain` and `next` combinators. Used by SSE and the
+  examples.
 - `slice` and `CowSlice` – manual byte slice types for zero-copy operations.
 - `num` – `itoa` and `hexized` for efficient number formatting.
 - `time` – `imf_fixdate` to produce RFC 9110 date strings.
@@ -90,6 +92,17 @@ async fn events() -> DataStream {
         }
     }))
 }
+```
+
+Other utilities include `stream::once` for a single item and `StreamExt` for
+common combinators. A small stream pipeline could look like:
+
+```rust,no_run
+use ohkami::util::{stream, StreamExt};
+
+let mut s = stream::once(1).chain(stream::once(2)).map(|n| n * 2);
+assert_eq!(s.next().await, Some(2));
+assert_eq!(s.next().await, Some(4));
 ```
 
 See [`ohkami_lib/src/stream.rs`](../ohkami-0.24/ohkami_lib/src/stream.rs) for

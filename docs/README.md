@@ -18,9 +18,10 @@ For a quick project overview, see the main
   including the `Connection` trait and timeout control.
 - [RUNTIME_ADAPTERS_v0.24.md](RUNTIME_ADAPTERS_v0.24.md) — deploying to
   Workers or Lambda with examples, including Lambda WebSocket support.
-- [UTILS_v0.24.md](UTILS_v0.24.md) — helper functions such as base64 utilities,
-  cookie parsing, `timeout_in` and the `stream::queue` example covering slice,
-  num and time modules.
+- [UTILS_v0.24.md](UTILS_v0.24.md) — helper functions like base64 encoding,
+  cookie parsing and `timeout_in` plus streaming helpers such as `stream::queue`
+  and `stream::once` with `StreamExt` combinators. Covers slice, num and time
+  modules too.
 - [MACROS_v0.24.md](MACROS_v0.24.md) — derives plus OpenAPI and Workers macros
   including `#[bindings(env)]` for environment specific bindings.
 - [FANGS_v0.24.md](FANGS_v0.24.md) — overview of builtin middleware and
