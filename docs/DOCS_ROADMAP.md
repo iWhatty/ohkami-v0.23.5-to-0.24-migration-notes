@@ -50,7 +50,8 @@ including connection trait details.
   [RUNTIME_ADAPTERS_v0.24](RUNTIME_ADAPTERS_v0.24.md) now include
   examples for `#[bindings]` (with env selection) and Lambda WebSocket handling.
 - `util` helpers and the `ohkami_lib` crate covered in [UTILS_v0.24](UTILS_v0.24.md)
-  now document base64 utilities, cookie parsing, `timeout_in` and a stream queue example.
+  now document base64 utilities, cookie parsing, `timeout_in` and streaming helpers
+  like `stream::queue`, `stream::once` and `StreamExt` combinators.
 - Error conversions via `IntoResponse` documented in
   [ERROR_HANDLING_v0.24](ERROR_HANDLING_v0.24.md).
 - Procedural macros in [MACROS_v0.24](MACROS_v0.24.md) now include examples for
