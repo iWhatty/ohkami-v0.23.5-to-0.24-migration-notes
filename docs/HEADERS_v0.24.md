@@ -52,6 +52,18 @@ let sc = SetCookie::from_raw(raw)?;
 assert_eq!(sc.MaxAge(), Some(30));
 ```
 
+### Reading Cookies
+
+Incoming requests expose a `Cookies()` helper that splits the raw `Cookie`
+header into `(name, value)` pairs using
+[`util::iter_cookies`](../ohkami-0.24/ohkami/src/util.rs):
+
+```rust
+for (name, val) in req.headers.Cookies() {
+    println!("{name} = {val}");
+}
+```
+
 
 ## Entity Tags
 `ETag` parses strong and weak entity tags.  Use `ETag::parse` or the iterator
@@ -79,8 +91,22 @@ It returns the remaining path with extensions removed so pre-compressed assets
 like `app.js.gz.br` can be served with the correct `Content-Encoding` header.
 `Dir` uses this helper to look up files preferred by `Accept-Encoding`.
 
+`CompressionEncoding` can also reconstruct names:
 
+- `to_extension()` turns the encoding list back into a file extension such as
+  `"gz.br"`.
+- `to_content_encoding()` returns the header string like `"gzip, br"`.
 
+```rust
+use ohkami::header::CompressionEncoding;
+use std::path::Path;
+
+let (enc, path) = CompressionEncoding::from_file_path(Path::new("app.js.gz.br"))
+    .unwrap();
+assert_eq!(path.as_path(), Path::new("app.js"));
+assert_eq!(enc.to_extension(), "gz.br");
+assert_eq!(enc.to_content_encoding(), "gzip, br");
+```
 
 ### Example
 
