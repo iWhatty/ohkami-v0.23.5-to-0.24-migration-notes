@@ -74,3 +74,11 @@ async fn main() {
 
 This serves `index.html` at `/` and `/about.html` at `/about`. Dotfiles under
 `./public` are accessible.
+
+## OpenAPI Support
+
+When the optional `openapi` feature is enabled the `Dir` fang registers
+`GET` operations for its mounted files. Generated paths include `200 OK`
+and `304 Not Modified` responses with the correct MIME type. Calling
+`Ohkami::generate` will therefore document static assets alongside your
+API routes.

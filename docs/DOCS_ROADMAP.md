@@ -11,7 +11,7 @@ It highlights which modules are documented and notes areas that still need work.
   [CODING_GUIDE_v0.24](CODING_GUIDE_v0.24.md) and
   [PATTERNS_v0.24](PATTERNS_v0.24.md).
 - `ohkami/src/testing` — explained in [TESTING_v0.24](TESTING_v0.24.md).
-- `ohkami/src/tls` — usage documented in [TLS_v0.24](TLS_v0.24.md) with certificate loading example.
+- `ohkami/src/tls` — HTTPS in [TLS_v0.24](TLS_v0.24.md), with certificate loading example.
 - `ohkami/src/request` and `ohkami/src/response` - detailed in
   [REQUEST_v0.24](REQUEST_v0.24.md) (context store and payload limits) and
   [RESPONSE_v0.24](RESPONSE_v0.24.md) (body helpers and typed statuses).
@@ -26,7 +26,7 @@ It highlights which modules are documented and notes areas that still need work.
 - General conventions such as module layout, prelude imports and routing
   helpers documented in [CODE_STYLE_v0.24](CODE_STYLE_v0.24.md).
 - `ohkami/src/ohkami/dir` — static file serving in [DIR_v0.24](DIR_v0.24.md),
- including notes on preloading, compression and cache headers.
+ including notes on preloading, compression and cache headers and automatic OpenAPI responses.
 - `ohkami/src/config` â environment variables documented in
   [CONFIGURATION_v0.24](CONFIGURATION_v0.24.md). Values are loaded once at
   startup through the [`CONFIG`](../ohkami-0.24/ohkami/src/config.rs) static.
