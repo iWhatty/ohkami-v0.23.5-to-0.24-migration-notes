@@ -30,7 +30,8 @@ For a quick project overview, see the main
 - [HEADERS_v0.24.md](HEADERS_v0.24.md) — common header utilities with `QValue`
   and compression helpers plus `SetCookie` parsing and builder methods.
 - [DIR_v0.24.md](DIR_v0.24.md) — static directory fang with preloading,
-  compression and caching details.
+  compression and caching details. With the `openapi` feature enabled
+  these files appear in the generated spec as `GET` operations.
 - [REQUEST_v0.24.md](REQUEST_v0.24.md) — request structure, context store and extraction.
 - [RESPONSE_v0.24.md](RESPONSE_v0.24.md) — building responses.
 - [ERROR_HANDLING_v0.24.md](ERROR_HANDLING_v0.24.md) — custom error enums and
