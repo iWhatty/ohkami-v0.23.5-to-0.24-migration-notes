@@ -37,9 +37,10 @@ It highlights which modules are documented and notes areas that still need work.
 
 - `ohkami/src/format` explained in [FORMAT_v0.24](FORMAT_v0.24.md)
   with a custom CSV example.
-- `ohkami/src/header` described in [HEADERS_v0.24](HEADERS_v0.24.md)
-  including typed header wrappers, `SetCookie` builder methods and parsing,
-  cookie iteration and precompressed file detection.
+ - `ohkami/src/header` described in [HEADERS_v0.24](HEADERS_v0.24.md)
+   including typed header wrappers, `SetCookie` builder methods,
+   cookie iteration, precompressed file detection and the
+   `CompressionEncoding::to_extension`/`to_content_encoding` helpers.
 - `ohkami/src/ws` covered in [WS_v0.24](WS_v0.24.md)
   with `upgrade_durable`, `SessionMap`, split connections
   and the `LambdaWebSocket` helper for API Gateway.
