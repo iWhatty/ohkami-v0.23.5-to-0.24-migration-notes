@@ -84,3 +84,17 @@ async fn main() {
     Ohkami::new(("/events".GET(stream))).howl("localhost:3030").await;
 }
 ```
+
+## Implementation Notes
+
+`DataStream` wraps a boxed `Stream<Item = String>` and a marker for the original
+data type. Its definition appears around lines 38‑41 of
+[`sse/mod.rs`](../ohkami-0.24/ohkami/src/sse/mod.rs#L38-L41). When converted into
+a response, `into_response` sets this stream on `Response::OK` without any
+additional boxing. See lines 66‑72 for the details.
+
+`DataStream::new` creates an internal queue using
+`QueueStream::new` and hands a [`handle::Stream`](../ohkami-0.24/ohkami/src/sse/mod.rs#L126-L143)
+to your closure. Each call to `send` pushes an encoded item onto this queue,
+which is then pulled by the streaming response. The closure runs to completion
+while the client receives each item in order.
