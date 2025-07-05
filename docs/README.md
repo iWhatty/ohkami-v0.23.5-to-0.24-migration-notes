@@ -45,7 +45,8 @@ For a quick project overview, see the main
 - [WS_v0.24.md](WS_v0.24.md) — upgrading connections to WebSockets with
   Workers and Lambda adapters.
 - [SSE_v0.24.md](SSE_v0.24.md) — streaming Server‑Sent Events with the
-  `DataStream` queue and custom `Data` types.
+  `DataStream` queue and custom `Data` types. Includes implementation notes
+  describing how the queue interacts with `Response`.
 - [ROUTER_v0.24.md](ROUTER_v0.24.md) — how routes are organized and finalized.
 - [FEATURE_FLAGS_v0.24.md](FEATURE_FLAGS_v0.24.md) — optional Cargo features
   detailing runtime and protocol flags.
