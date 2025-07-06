@@ -76,8 +76,11 @@ It also implements `Display` so headers can be generated with
 `Encoding` and `CompressionEncoding` represent compression algorithms. The
 `AcceptEncoding` struct sorts algorithms by quality values (`QValue`) so you can
 negotiate compressed responses.
-The helper `QValue::parse` converts a quality string like `"0.8"` into a sortable
-floating point representation.
+`AcceptEncoding::parse` handles `*` wildcards and ignores unknown names.
+It defaults `identity` to q=0.001 so compression is preferred if supported.
+The helper `QValue::parse` converts a quality string like `"0.8"` into a sortable floating
+point representation. Call `iter_in_preferred_order` to iterate encodings
+sorted by quality.
 
 Typed helpers exist for many common headers.  For example `ResponseHeaders`
 provides methods like `ContentType` and `CacheControl` which accept strongly
