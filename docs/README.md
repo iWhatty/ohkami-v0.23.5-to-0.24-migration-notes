@@ -15,7 +15,7 @@ For a quick project overview, see the main
   typed errors and custom path parameters.
 - [ARCHITECTURE_v0.24.md](ARCHITECTURE_v0.24.md) — crate layout and runtime abstraction.
 - [SESSION_v0.24.md](SESSION_v0.24.md) — how connections are managed,
-  including the `Connection` trait and timeout control.
+  including the `Connection` trait, timeout control and the `OHKAMI_REQUEST_BUFSIZE` setting.
 - [RUNTIME_ADAPTERS_v0.24.md](RUNTIME_ADAPTERS_v0.24.md) — deploying to
   Workers or Lambda with examples, including Lambda WebSocket support.
 - [UTILS_v0.24.md](UTILS_v0.24.md) — helper functions like base64 encoding,
