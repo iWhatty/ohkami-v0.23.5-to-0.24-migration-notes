@@ -47,7 +47,7 @@ It highlights which modules are documented and notes areas that still need work.
   and the `LambdaWebSocket` helper for API Gateway.
 
 - `ohkami/src/session` - lifecycle explained in [SESSION_v0.24](SESSION_v0.24.md)
-including connection trait details.
+  including connection trait details and environment timeouts.
 - Cloud runtime adapters (`x_worker`, `x_lambda`) documented in
   [RUNTIME_ADAPTERS_v0.24](RUNTIME_ADAPTERS_v0.24.md) now include
   examples for `#[bindings]` (with env selection) and Lambda WebSocket handling.
