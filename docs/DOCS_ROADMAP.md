@@ -96,7 +96,7 @@ Router internals are now covered in more detail with notes on automatic
 `OPTIONS` handlers, merging nested `Ohkami`s and native runtime compression.
 The WebSocket guide shows `upgrade_durable` and the `SessionMap` helper for
 Workers. The `sse` module now explains how `DataStream` is built on a queued
-stream and references the source for `handle::Stream`. Further real‑world guides for the `Dir` fang
+stream, shows converting existing streams with `DataStream::from` and references the source lines for `handle::Stream`. Further real‑world guides for the `Dir` fang
 would be valuable.
 
 Additional gaps:

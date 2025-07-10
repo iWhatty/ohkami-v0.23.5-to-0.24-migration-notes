@@ -98,3 +98,17 @@ additional boxing. See lines 66‑72 for the details.
 to your closure. Each call to `send` pushes an encoded item onto this queue,
 which is then pulled by the streaming response. The closure runs to completion
 while the client receives each item in order.
+
+## Source Highlights
+
+The [`DataStream`](../ohkami-0.24/ohkami/src/sse/mod.rs#L38-L41) type
+is defined as a thin wrapper around a boxed [`Stream`](../ohkami-0.24/ohkami_lib/src/stream.rs)
+and a marker for the data element.  The `From` implementation at
+[lines 84‑89](../ohkami-0.24/ohkami/src/sse/mod.rs#L84-L89) converts any
+`Stream<Item = T>` where `T: Data` into a `DataStream` by mapping each item
+through `Data::encode`.
+
+`DataStream::new` ([lines 93‑123](../ohkami-0.24/ohkami/src/sse/mod.rs#L93-L123))
+spawns an async producer backed by a `QueueStream`.  It returns immediately
+and yields items to the client as they are pushed via
+[`handle::Stream::send`](../ohkami-0.24/ohkami/src/sse/mod.rs#L126-L143).
