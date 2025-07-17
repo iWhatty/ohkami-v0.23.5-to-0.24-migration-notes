@@ -55,3 +55,19 @@ other integrations. To benchmark the Tokio version with TLS enabled:
 cd ohkami-0.24/benches_rt/tokio
 cargo run --release --features tls
 ```
+
+### Sample Results
+
+A run of `cargo bench` on a Linux x86-64 machine with Rust 1.73 nightly
+produced the following excerpts:
+
+```text
+test create_small_bytes ... bench:          33.80 ns/iter (+/- 2.53)
+test create_small_cow   ... bench:           0.34 ns/iter (+/- 0.01)
+test insert_ohkami      ... bench:          41.39 ns/iter (+/- 1.56)
+test remove_ohkami      ... bench:          12.97 ns/iter (+/- 0.88)
+```
+
+These numbers show the low overhead of Ohkami's custom header map compared to
+standard library structures.  See `bench-results.txt` in the repository for the
+full output.

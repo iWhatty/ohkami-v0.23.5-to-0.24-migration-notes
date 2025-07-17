@@ -84,9 +84,9 @@ It highlights which modules are documented and notes areas that still need work.
 - Multiple single-threaded runtimes shown in
   [examples/multiple-single-threads.md](examples/multiple-single-threads.md).
 - `Taskfile.yaml` tasks explained in [TASKS_v0.24](TASKS_v0.24.md) including check, test and bench.
-- Benchmark crates explained in [BENCHES_v0.24](BENCHES_v0.24.md) with lists
-  of micro modules (including response header and `TupleMap` benchmarks) and
-  runtime comparison crates.
+- Benchmark crates explained in [BENCHES_v0.24](BENCHES_v0.24.md) now include
+  sample results along with lists of micro modules such as response header and
+  `TupleMap` benchmarks, plus the runtime comparison crates.
 - Cargo feature flags detailed in
   [FEATURE_FLAGS_v0.24](FEATURE_FLAGS_v0.24.md) including runtime specific notes.
 - Workspace setup documented in [../ENV_SETUP.md](../ENV_SETUP.md).
@@ -96,7 +96,9 @@ Router internals are now covered in more detail with notes on automatic
 `OPTIONS` handlers, merging nested `Ohkami`s and native runtime compression.
 The WebSocket guide shows `upgrade_durable` and the `SessionMap` helper for
 Workers. The `sse` module now explains how `DataStream` is built on a queued
-stream, shows converting existing streams with `DataStream::from` and references the source lines for `handle::Stream`. Further real‑world guides for the `Dir` fang
+stream, shows converting existing streams with `DataStream::from` and references
+the source lines for `handle::Stream`. Further real‑world guides for the `Dir`
+fang
 would be valuable.
 
 Additional gaps:
