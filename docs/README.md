@@ -53,6 +53,7 @@ For a quick project overview, see the main
   detailing runtime and protocol flags.
 - [TASKS_v0.24.md](TASKS_v0.24.md) — `task` CLI usage including bench helpers.
 - [BENCHES_v0.24.md](BENCHES_v0.24.md) — micro and runtime benchmarks with tuning tips,
+  sample results and comparisons of header containers and `TupleMap` lookups.
   including header container and `TupleMap` comparisons.
 
 - [CONFIGURATION_v0.24.md](CONFIGURATION_v0.24.md) — environment variables and runtime tuning.
