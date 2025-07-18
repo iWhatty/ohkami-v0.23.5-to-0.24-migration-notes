@@ -22,8 +22,9 @@ For a quick project overview, see the main
   cookie parsing and `timeout_in` plus streaming helpers such as `stream::queue`
   and `stream::once` with `StreamExt` combinators. Covers slice, num and time
   modules too.
-- [MACROS_v0.24.md](MACROS_v0.24.md) — derives plus OpenAPI and Workers macros
-  including `#[bindings(env)]` for environment specific bindings.
+- [MACROS_v0.24.md](MACROS_v0.24.md) — derives plus OpenAPI macros and Workers
+  helpers. Describes `#[bindings(env)]` and worker metadata options for
+  automatic documentation.
 - [FANGS_v0.24.md](FANGS_v0.24.md) — overview of builtin middleware and
   configuration options.
 - [FORMAT_v0.24.md](FORMAT_v0.24.md) — request/response body helpers and custom format examples.
