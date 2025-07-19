@@ -66,10 +66,25 @@ for (name, val) in req.headers.Cookies() {
 
 
 ## Entity Tags
-`ETag` parses strong and weak entity tags.  Use `ETag::parse` or the iterator
-helpers to process conditional request headers.
+`ETag` parses strong and weak entity tags. Use `ETag::parse` or the iterator
+helpers to process conditional request headers. `ETag::iter_from` skips invalid
+values and `try_iter_from` returns errors. The `matches` method implements the
+weak comparison defined by HTTP.
 It also implements `Display` so headers can be generated with
-`res.headers.set().ETag(etag.clone());`.
+`res.headers.set().ETag(etag.clone());`
+
+### Example
+
+```rust
+use ohkami::header::ETag;
+
+let ours = ETag::strong("v1".into());
+for tag in ETag::iter_from(r#"W/"v1", "v2""#) {
+    if tag.matches(&ours) {
+        // send 304 Not Modified
+    }
+}
+```
 
 ## Content Encoding
 
