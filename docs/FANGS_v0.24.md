@@ -64,7 +64,8 @@ let token = JWT::<Claims>::new_256("topsecret")
 `CORS::new(origin)` configures `Access-Control-*` headers for cross origin
 requests.  Methods like `.AllowCredentials()` and `.AllowHeaders([...])`
 customize the response to pre‑flight and normal requests.  Use
-`ExposeHeaders`, `MaxAge` and `AllowMethods` to fine tune the headers.
+`ExposeHeaders` and `MaxAge` to tune caching behavior.  The allowed methods
+list is detected automatically from the routes defined at that path.
 
 ```rust,no_run
 use ohkami::fang::CORS;
