@@ -29,8 +29,9 @@ For a quick project overview, see the main
   configuration options.
 - [FORMAT_v0.24.md](FORMAT_v0.24.md) — request/response body helpers and custom format examples.
 - [HEADERS_v0.24.md](HEADERS_v0.24.md) — common header utilities with `QValue`,
-  cookie iteration and compression helpers including `to_extension` plus
-  `SetCookie` builder methods and `AcceptEncoding::parse` behavior.
+  cookie iteration, `ETag` parsing and comparison helpers, compression helpers
+  including `CompressionEncoding::to_extension`, plus `SetCookie` builder
+  methods and `AcceptEncoding::parse` behavior.
 - [DIR_v0.24.md](DIR_v0.24.md) — static directory fang with preloading,
   compression and caching details. With the `openapi` feature enabled
   these files appear in the generated spec as `GET` operations.
