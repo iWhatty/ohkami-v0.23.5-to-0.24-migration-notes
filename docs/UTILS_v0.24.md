@@ -52,6 +52,7 @@ Other helpers include:
 - `ErrorMessage` — simple error type implementing `IntoResponse` for 500s.
 - `imf_fixdate` formats timestamps for HTTP `Date` headers.
 - `IP_0000` constant representing `0.0.0.0` for binding servers.
+- `num_cpus` re-export when using the `rt_glommio` runtime for core detection.
 
 ## ohkami_lib Crate
 

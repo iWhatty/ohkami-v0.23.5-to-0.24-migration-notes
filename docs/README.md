@@ -21,7 +21,7 @@ For a quick project overview, see the main
 - [UTILS_v0.24.md](UTILS_v0.24.md) — helper functions like base64 encoding,
   cookie parsing and `timeout_in` plus streaming helpers such as `stream::queue`
   and `stream::once` with `StreamExt` combinators. Covers slice, num and time
-  modules too.
+  modules too, and notes the `num_cpus` re-export for glommio runtimes.
 - [MACROS_v0.24.md](MACROS_v0.24.md) — derives plus OpenAPI macros and Workers
   helpers. Describes `#[bindings(env)]` and worker metadata options for
   automatic documentation.

@@ -55,7 +55,8 @@ It highlights which modules are documented and notes areas that still need work.
   examples for `#[bindings]` (with env selection) and Lambda WebSocket handling.
 - `util` helpers and the `ohkami_lib` crate covered in [UTILS_v0.24](UTILS_v0.24.md)
   now document base64 utilities, cookie parsing, `timeout_in` and streaming helpers
-  like `stream::queue`, `stream::once` and `StreamExt` combinators.
+  like `stream::queue`, `stream::once` and `StreamExt` combinators. The guide
+  now also notes the `num_cpus` re-export for glommio runtime builds.
 - Error conversions via `IntoResponse` documented in
   [ERROR_HANDLING_v0.24](ERROR_HANDLING_v0.24.md).
  - Procedural macros in [MACROS_v0.24](MACROS_v0.24.md) now include examples for
