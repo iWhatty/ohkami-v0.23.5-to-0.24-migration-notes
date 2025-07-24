@@ -28,9 +28,10 @@ It highlights which modules are documented and notes areas that still need work.
   helpers documented in [CODE_STYLE_v0.24](CODE_STYLE_v0.24.md).
 - `ohkami/src/ohkami/dir` — static file serving in [DIR_v0.24](DIR_v0.24.md),
  including notes on preloading, compression and cache headers and automatic OpenAPI responses.
-- `ohkami/src/config` â environment variables documented in
-  [CONFIGURATION_v0.24](CONFIGURATION_v0.24.md). Values are loaded once at
-  startup through the [`CONFIG`](../ohkami-0.24/ohkami/src/config.rs) static.
+- `ohkami/src/config` â environment variables documented in
+  [CONFIGURATION_v0.24](CONFIGURATION_v0.24.md). The guide now links to the
+  [`CONFIG`](../ohkami-0.24/ohkami/src/lib.rs#L171-L176) static and explains
+  where each variable is used within the request and session modules.
 - `ohkami/src/router` â tree structure, compression and lookup documented in
   [ROUTER_v0.24](ROUTER_v0.24.md).
 - Notes in [NOTES_FROM_SOURCE_v0.24.md](NOTES_FROM_SOURCE_v0.24.md) cover router defaults.
