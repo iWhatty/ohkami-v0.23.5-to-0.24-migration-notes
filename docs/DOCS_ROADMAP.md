@@ -8,7 +8,7 @@ It highlights which modules are documented and notes areas that still need work.
 - `ohkami/src/ohkami` â explained throughout [CODING_GUIDE_v0.24](CODING_GUIDE_v0.24.md).
 - `ohkami/src/fang` â builtin middleware covered in
   [FANGS_v0.24](FANGS_v0.24.md) (builder method details added; CORS docs clarify
-  that allowed methods are auto-detected),
+  that allowed methods are auto-detected; OpenAPI hooks for BasicAuth/JWT are noted),
   [CODING_GUIDE_v0.24](CODING_GUIDE_v0.24.md) and
   [PATTERNS_v0.24](PATTERNS_v0.24.md).
 - `ohkami/src/testing` — explained in [TESTING_v0.24](TESTING_v0.24.md).
