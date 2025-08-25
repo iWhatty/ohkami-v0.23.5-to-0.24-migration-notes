@@ -25,9 +25,10 @@ For a quick project overview, see the main
 - [MACROS_v0.24.md](MACROS_v0.24.md) — derives plus OpenAPI macros and Workers
   helpers. Describes `#[bindings(env)]` and worker metadata options for
   automatic documentation.
-- [FANGS_v0.24.md](FANGS_v0.24.md) — overview of builtin middleware and
-  configuration options. Notes that `CORS` automatically selects allowed
-  methods based on the defined routes.
+ - [FANGS_v0.24.md](FANGS_v0.24.md) — overview of builtin middleware and
+   configuration options. Notes that `CORS` automatically selects allowed
+   methods based on the defined routes and that `BasicAuth` and `JWT`
+   integrate with OpenAPI security schemes.
 - [FORMAT_v0.24.md](FORMAT_v0.24.md) — request/response body helpers and custom format examples.
 - [HEADERS_v0.24.md](HEADERS_v0.24.md) — common header utilities with `QValue`,
   cookie iteration, `ETag` parsing and comparison helpers, compression helpers

@@ -37,6 +37,11 @@ let secure = ohkami::Ohkami::new((
 ));
 ```
 
+When the `openapi` feature is active the fang marks protected handlers with a
+basic authentication requirement. The implementation at
+[lines 99‑103](../ohkami-0.24/ohkami/src/fang/builtin/basicauth.rs#L99-L103)
+adds `SecurityScheme::Basic("basicAuth")` to the OpenAPI spec.
+
 ## JWT
 
 `JWT::<Payload>::new_256(secret)` verifies a JSON Web Token and stores the
@@ -58,6 +63,10 @@ let api = ohkami::Ohkami::new((
 let token = JWT::<Claims>::new_256("topsecret")
     .issue(Claims { sub: "u1".into() });
 ```
+
+With `openapi` enabled the fang inserts a bearer security definition. The logic
+is implemented around
+[lines 116‑128](../ohkami-0.24/ohkami/src/fang/builtin/jwt.rs#L116-L128).
 
 ## CORS
 
@@ -84,6 +93,9 @@ let cors = CORS::new("https://example.com")
 `Timeout::by_secs(n)` aborts handlers that take longer than the specified
 duration on native runtimes.  Builders `by_millis`, `by_secs_f32` and
 `by_secs_f64` are also available.
+
+The constructor methods are defined in
+[timeout.rs](../ohkami-0.24/ohkami/src/fang/builtin/timeout.rs#L36-L52).
 
 ```rust,no_run
 use ohkami::fang::Timeout;
