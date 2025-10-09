@@ -11,7 +11,9 @@ It highlights which modules are documented and notes areas that still need work.
   that allowed methods are auto-detected; OpenAPI hooks for BasicAuth/JWT are noted),
   [CODING_GUIDE_v0.24](CODING_GUIDE_v0.24.md) and
   [PATTERNS_v0.24](PATTERNS_v0.24.md).
-- `ohkami/src/testing` — explained in [TESTING_v0.24](TESTING_v0.24.md).
+- `ohkami/src/testing` — explained in [TESTING_v0.24](TESTING_v0.24.md)
+  with `TestRequest` builders for query/header/JSON bodies and `TestResponse`
+  inspection helpers.
 - `ohkami/src/tls` — HTTPS in [TLS_v0.24](TLS_v0.24.md), with certificate loading example.
 - `ohkami/src/request` and `ohkami/src/response` - detailed in
   [REQUEST_v0.24](REQUEST_v0.24.md) (context store and payload limits) and
