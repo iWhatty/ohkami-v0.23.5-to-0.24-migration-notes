@@ -57,7 +57,9 @@ For a quick project overview, see the main
 - [ROUTER_v0.24.md](ROUTER_v0.24.md) — how routes are organized and finalized.
 - [FEATURE_FLAGS_v0.24.md](FEATURE_FLAGS_v0.24.md) — optional Cargo features
   detailing runtime and protocol flags.
-- [TASKS_v0.24.md](TASKS_v0.24.md) — `task` CLI usage including bench helpers.
+- [TASKS_v0.24.md](TASKS_v0.24.md) — explains the Taskfile runtime matrix,
+  nightly feature detection, benchmark gating and tips for targeting a single
+  runtime with `--rt`.
 - [BENCHES_v0.24.md](BENCHES_v0.24.md) — micro and runtime benchmarks with tuning tips,
   sample results and comparisons of header containers and `TupleMap` lookups.
   including header container and `TupleMap` comparisons.
