@@ -89,7 +89,8 @@ It highlights which modules are documented and notes areas that still need work.
   adapter example using `LambdaWebSocket::handle`.
 - Multiple single-threaded runtimes shown in
   [examples/multiple-single-threads.md](examples/multiple-single-threads.md).
-- `Taskfile.yaml` tasks explained in [TASKS_v0.24](TASKS_v0.24.md) including check, test and bench.
+- `Taskfile.yaml` tasks explained in [TASKS_v0.24](TASKS_v0.24.md) including the
+  runtime feature matrix, nightly feature toggles and benchmark shortcuts.
 - Benchmark crates explained in [BENCHES_v0.24](BENCHES_v0.24.md) now include
   sample results along with lists of micro modules such as response header and
   `TupleMap` benchmarks, plus the runtime comparison crates.
